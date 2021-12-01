@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
+const navigate = useNavigate();
     const [user,setUser]=React.useState({
         username:"",
         email:"",
@@ -30,7 +31,7 @@ const SignUp = () => {
                         setErr(res.data)
                     }
                 }else{
-                    setErr('Welcome To Our Family')
+                    setErr('Welcome To Our Family 👨‍👩‍👧‍👦')
                     setUser({ username:"",
                         email:"",
                         password:"",
@@ -38,6 +39,9 @@ const SignUp = () => {
                         age:""})
 
                 }
+        setTimeout(()=>{
+            navigate('/bmi');
+        },1000)
             }).catch(e=>{
                 console.log(e)
             })

@@ -5,7 +5,9 @@ import {
   Route
 } from "react-router-dom";
 import Register from "./Components/register/register";
-import Profile from "./Components/profile";
+import Profile from "./Components/profile/profile";
+import Admin from "./Components/admin/admin";
+import AdminSheet from "./Components/admin/AdminSheet";
 
 function App() {
   return (
@@ -14,8 +16,9 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<Register/>}/>
-            <Route path="/bmi" element={"sasaas"}/>
-            <Route path="/admin" element={"sasaas"}/>
+            <Route path="/bmi" element={"bmi"}/>
+            <Route path="/admin" element={<Admin/>}/>
+            <Route path="/adminSheet" element={<AdminSheet/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/workouts" element={"sasaas"}/>
             <Route path="/recipes" element={"sasaas"}/>
