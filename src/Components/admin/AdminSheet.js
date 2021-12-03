@@ -3,35 +3,65 @@ import axios from "axios";
 import { Card } from 'semantic-ui-react'
 import ShowUser from "./ShowUser";
 import './admin.css'
+import {useNavigate} from 'react-router-dom';
 const AdminSheet=()=>{
+      const navigate = useNavigate();
     const [Users,setUsers]=React.useState([])
-    const [Note, setNote] = React.useState('')
+    // const [Note, setNote] = React.useState('')
+    const [currentUserId,setCurrentUserId]=React.useState('')
 
     React.useEffect(()=>{
         AllUsers()
     },[])
+    React.useEffect(()=>{
+        HasBeenDeleted(currentUserId)
+    },[currentUserId])
 
     const AllUsers=()=>{
         axios.get('https://fit-at-home1.herokuapp.com/api/users').then(res => {
             console.log(res.data)
             if (res.status !== 200) {
-                setNote(res.data)
+                console.log(res.data)
             } else {
-                setUsers(res.data)
-            }
-        }).catch(e => setNote(e))
+                setUsers(res.data)}
+
+        }).catch(e => console.log(e))
     }
+    const LogOutUser=()=>{
+        localStorage.removeItem('userToken')
+         setTimeout(() => {
+                          navigate('/');
+                      }, 1500)
+    }
+   const getIdFromSon=(id)=>{
+       setCurrentUserId(id)
+    }
+
+    const HasBeenDeleted=(id)=>{
+        let copyUsers=[...Users]
+       setUsers(copyUsers.filter(user=>user._id!==id)
+       )    }
     return(
         <div className={"cont"}>
+            <h3> Hello Admin </h3>
+            <button className="ui negative basic button" onClick={LogOutUser}>
+                <i className="share square outline icon"></i>
+                Log Me Out
+            </button>
             <h1 className={"title"}>All of Your Users</h1>
             <Card.Group>
             {Users?Users.map(user=>{
                 if(user.admin!==true) {
-                    console.log(user)
-              return <ShowUser key={user._id} id={user._id} weight={user.bmi.weight}  height={user.bmi.height} username={user.username} age={user.age} bmi={user.bmi.result} email={user.email} isActive={user.isActive}/>
+                    if (user.bmi) {
+                        console.log(user)
+                        return <ShowUser method={getIdFromSon} key={user._id} id={user._id} weight={user.bmi.weight} height={user.bmi.height}
+                                         username={user.username} age={user.age} bmi={user.bmi.result}
+                                         email={user.email} isActive={user.isActive}/>
+                    }
                 }
             }):""}
                 </Card.Group>
+
 
         </div>
     )

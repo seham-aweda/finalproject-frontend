@@ -31,6 +31,7 @@ const navigate = useNavigate();
                         setErr(res.data)
                     }
                 }else{
+                    localStorage.setItem("userToken",res.data.token);
                     setErr('Welcome To Our Family 👨‍👩‍👧‍👦')
                     setUser({ username:"",
                         email:"",

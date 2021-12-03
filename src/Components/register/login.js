@@ -41,8 +41,9 @@ const LogIn = () => {
                     if (res.status !== 200) {
                         setNote(res.data)
                     } else {
-                        if(res.data.admin!==true){
-                        setNote('Welcome Back')
+                        if(res.data.user.admin!==true){
+                            localStorage.setItem("userToken",res.data.token);
+                            setNote('Welcome Back')
                         setLoginUser({
                             email: '',
                             password: ''
@@ -50,7 +51,9 @@ const LogIn = () => {
                         setTimeout(() => {
                             navigate('/workouts');
                         }, 1500)
-                    }else{
+                    }else  if(res.data.user.admin===true) {
+                            setNote('YOU ARE THE ADMIN')
+                        }else{
                         setNote('You\'re not a user')
                     }
                     }

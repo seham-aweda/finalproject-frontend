@@ -8,6 +8,7 @@ import Register from "./Components/register/register";
 import Profile from "./Components/profile/profile";
 import Admin from "./Components/admin/admin";
 import AdminSheet from "./Components/admin/AdminSheet";
+import Bmi from "./Components/Bmi/Bmi";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<Register/>}/>
-            <Route path="/bmi" element={"bmi"}/>
+            <Route path="/bmi" element={<Bmi/>}/>
             <Route path="/admin" element={<Admin/>}/>
             <Route path="/adminSheet" element={<AdminSheet/>}/>
             <Route path="/profile" element={<Profile/>}/>

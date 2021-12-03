@@ -8,7 +8,7 @@ const Admin = () => {
         email:'',
         password:''
     })
-    const [note,setNote]=React.useState('')
+        const [note,setNote]=React.useState('')
     const changeHandler=(e)=>{
         setAdmin({...admin, [e.target.name]: e.target.value})
     }
@@ -21,6 +21,7 @@ const Admin = () => {
                   setNote(res.data)
               } else {
                   if (res.data.user.admin === true) {
+                      localStorage.setItem("userToken",res.data.token);
                       setNote(`Welcome Back ${res.data.user.username}`)
                       setAdmin({
                           email: '',

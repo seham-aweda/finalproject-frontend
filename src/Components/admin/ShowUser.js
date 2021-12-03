@@ -2,15 +2,20 @@ import React from 'react'
 import axios from "axios";
 import 'semantic-ui-css/semantic.min.css'
 import { Button, Card, Image } from 'semantic-ui-react'
-const ShowUser=({id,username,age,bmi,email,isActive,weight,height})=>{
-    // const deleteByAdmin=()=>{
-    //     axios.delete('https://fit-at-home1.herokuapp.com/api/users/delete/'+id).then(res=>{
-    //         console.log(res)
-    //     }).catch(e=>{console.log(e)})
-    // }
-    const handler=(e)=>{
-        console.log(e.target.id)
+const ShowUser=({method,id,username,age,bmi,email,isActive,weight,height})=>{
+    // const {currentUserId,setCurrentUserId}=React.useState('')
+
+    const deleteByAdmin=(e)=>{
+        method(e.target.id)
+        axios.delete('https://fit-at-home1.herokuapp.com/api/users/delete/'+id,{
+            headers:{
+                'Authorization':localStorage.getItem('userToken')
+            }
+        }).then(res=>{
+            console.log(res)
+        }).catch(e=>{console.log(e)})
     }
+
     return(
         <div className={"usersheet"}>
                 <Card>
@@ -31,7 +36,7 @@ const ShowUser=({id,username,age,bmi,email,isActive,weight,height})=>{
                     </Card.Content>
                     <Card.Content extra>
                         <div className='ui two buttons'>
-                            <Button id={id} basic color='red' onClick={ handler}>
+                            <Button id={id} basic color='red' onClick={ deleteByAdmin}>
                                 Delete
                             </Button>
                         </div>
