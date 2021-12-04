@@ -8,12 +8,7 @@ const Nav=()=>{
             <nav>
                 <ul>
                     <li>
-                        <Link to="/admin">
-                            <div><i style={{color:'#4a16a2'}} className="fas fa-users-cog"></i></div>
-                            Admin</Link>
-                    </li>
-                    <li>
-                        <Link to="/profile"><div><span><i style={{fill:'#4a16a2'}} className="fas fa-user-circle"></i></span></div>
+                        <Link to="/profile"><div><span><i style={{color:'#4a16a2'}} className="fas fa-user-circle"></i></span></div>
                             Mine</Link>
                     </li>
                     <li>
@@ -25,6 +20,12 @@ const Nav=()=>{
                         <Link to="/recipes">
                             <div><i style={{color:'#4a16a2'}} className="fas fa-concierge-bell"></i></div>
                             Recipe</Link>
+                    </li>
+                    <li>
+                        <Link to="/logOut">
+                            <div><i style={{color:'#4a16a2'}} className="share square outline icon"></i>
+                            </div>
+                            LogOut</Link>
                     </li>
                 </ul>
             </nav>

@@ -9,6 +9,9 @@ import Profile from "./Components/profile/profile";
 import Admin from "./Components/admin/admin";
 import AdminSheet from "./Components/admin/AdminSheet";
 import Bmi from "./Components/Bmi/Bmi";
+import Recipes from "./Components/recipes/recipe";
+import Workout from "./Components/workout/workout";
+import Video1 from "./Components/workout/butt-beginner/butt-beginner1";
 
 function App() {
   return (
@@ -21,8 +24,9 @@ function App() {
             <Route path="/admin" element={<Admin/>}/>
             <Route path="/adminSheet" element={<AdminSheet/>}/>
             <Route path="/profile" element={<Profile/>}/>
-            <Route path="/workouts" element={"sasaas"}/>
-            <Route path="/recipes" element={"sasaas"}/>
+            <Route path="/workouts" element={<Workout/>}/>
+            <Route path="/video1" element={<Video1/>}/>
+            <Route path="/recipes" element={<Recipes/>}/>
           </Routes>
         </div>
       </Router>
