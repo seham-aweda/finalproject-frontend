@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500");
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+body{
+    width:100vw;
+    height:100vh;
+    font-family: 'Roboto', sans-serif;
+}
+.parent img{
+size:auto
+}
+.parent .content h3,.content h2{
+    margin:0;
+    font-size:210%;
+    text-shadow: black 4px 4px;
+}
+.parent {
+    width:100%;
+    height:80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:0.3fr repeat(4, 1fr) 0.3fr;
+    grid-column-gap: 11px;
+    grid-row-gap: 11px;
+}
+.parent .contain{
+    position: relative;
+    /*text-align: center;*/
+    color: white;
+    align-items: center;
+    margin:auto
+}
+.parent .content{
+    position:absolute;
+    top:60%;
+    padding-left:10px;
+}
+.parent .Header {
+    background-image: linear-gradient(to right, rebeccapurple , darkgray);
+    padding:15px;
+    margin:auto;
+letter-spacing:3px;
+    grid-area: 1 / 1 / 2 / 4; }
+.parent .ButtBeginner { grid-area: 2 / 1 / 3 / 2; }
+.parent .ButtIntermediate { grid-area: 2 / 2 / 3 / 3; }
+.parent .ButtAdvanced { grid-area: 2 / 3 / 3 / 4; }
+.parent .ThighBeginner { grid-area: 3 / 1 / 4 / 2; }
+.parent .ThighIntermediate { grid-area: 3 / 2 / 4 / 3; }
+.parent .ThighAdvanced { grid-area: 3 / 3 / 4 / 4; }
+.parent .ABSBeginner { grid-area: 4 / 1 / 5 / 2; }
+.parent .ABSIntermediate { grid-area: 4 / 2 / 5 / 3; }
+.parent .ABSAdvanced { grid-area: 4 / 3 / 5 / 4; }
+.parent .ArmBeginner { grid-area: 5 / 1 / 6 / 2; }
+.parent .ArmIntermediate { grid-area: 5 / 2 / 6 / 3; }
+.parent .ArmAdvanced { grid-area: 5 / 3 / 6 / 4; }
+.parent .Footer { grid-area: 6 / 1 / 7 / 4; }
+
+
+@media only screen and (max-width: 900px) {
+ h2,h3{
+     font-size: 150%;
+ }
+}

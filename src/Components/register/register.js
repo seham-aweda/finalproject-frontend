@@ -14,9 +14,10 @@ const Register = () => {
             </div>
             <div className={"form"}>
                 <div id="login-box">
+
                     <SignUp/>
-                    <LogIn/>
                     <div className="or">OR</div>
+                    <LogIn/>
                     <div className={'Admin'} onClick={()=>{
                         navigate('/admin')
                     }}> <input type={"submit"} value={'Admin'}/></div>

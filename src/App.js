@@ -11,8 +11,8 @@ import AdminSheet from "./Components/admin/AdminSheet";
 import Bmi from "./Components/Bmi/Bmi";
 import Recipes from "./Components/recipes/recipe";
 import Workout from "./Components/workout/workout";
-import Video1 from "./Components/workout/butt-beginner/butt-beginner1";
-
+import LogOut from './Components/logout/logout'
+import ButtBeginner from "./Components/workout/butt-beginner/butt-beginner1";
 function App() {
   return (
     <div className="App">
@@ -25,8 +25,9 @@ function App() {
             <Route path="/adminSheet" element={<AdminSheet/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/workouts" element={<Workout/>}/>
-            <Route path="/video1" element={<Video1/>}/>
+            <Route path="/buttBeginner" element={<ButtBeginner/>}/>
             <Route path="/recipes" element={<Recipes/>}/>
+            <Route path="/logOut" element={<LogOut/>}/>
           </Routes>
         </div>
       </Router>

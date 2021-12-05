@@ -7,14 +7,14 @@ body{
     width:100vw;
     height:100vh;
 }
-.usersheet{
+.cont .usersheet{
     margin:15px
 }
-.title{
+.cont .title{
     align-items: center;
     padding:20px
 }
-.space-between{
+.cont .usersheet .space-between{
     display:flex;
     justify-content: space-between;
 }
