@@ -15,7 +15,7 @@ size:auto
 }
 .parent .content h3,.content h2{
     margin:0;
-    font-size:210%;
+    font-size:4vmin;
     text-shadow: black 4px 4px;
 }
 .parent {
@@ -60,8 +60,3 @@ letter-spacing:3px;
 .parent .Footer { grid-area: 6 / 1 / 7 / 4; }
 
 
-@media only screen and (max-width: 900px) {
- h2,h3{
-     font-size: 150%;
- }
-}

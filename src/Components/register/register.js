@@ -23,6 +23,7 @@ const Register = () => {
                     }}> <input type={"submit"} value={'Admin'}/></div>
                 </div>
             </div>
+            
         </div>
     )
 }
