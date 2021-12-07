@@ -31,7 +31,6 @@ const Video = ({video, time, func, exe,text}) => {
                       onClick={()=>{navigate('/workouts')}}
               >
                   Back
-                  {/*<Icon name={'left arrow'}/>*/}
               </Button>
                    <div style={{padding:'3vw',textAlign:'center',margin:'auto'}}>
                        {exe ? ` Exercise : ${exe}/18` : ""}

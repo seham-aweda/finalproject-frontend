@@ -56,7 +56,7 @@ const ButtBeginner = () => {
                     <br/>
                     <button className="ui negative huge basic button" onClick={()=>navigate('/workouts')}>
                         <i className="share square outline icon"></i>
-                        BACK
+                       DONE
                     </button> </div>:<></>}
             </div>
 
