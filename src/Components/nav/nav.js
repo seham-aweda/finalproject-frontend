@@ -1,6 +1,7 @@
 import React from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {Icon, Menu, MenuItem, Segment} from "semantic-ui-react";
+import {toast, ToastContainer} from "react-toastify";
 
 const Nav=()=>{
     const [truthy,setTruthy]=React.useState({
@@ -16,6 +17,17 @@ const Active = (e) =>{
         setTruthy({
             ...truthy, [e.target.textContent.toString()]: true
         })
+    }
+    if(localStorage.getItem('userToken')!==null) {
+        if(e.target.textContent==='LogOut'){
+        localStorage.removeItem('userToken')
+        toast('You Have Logged Out')
+        setTimeout(()=>{
+            navigate('/')
+        },1500)
+    }
+    }else{
+        toast('Please Authenticate')
     }
     }
     return(
@@ -42,13 +54,15 @@ const Active = (e) =>{
             </a>
             <a className={truthy.LogOut?"active grey item":'item'} onClick={Active} style={{display:'flex',flexDirection:'column'}}>
                     <div style={{width:"fit-content"}}><i style={{color:'#4a16a2'}} className="share square outline icon"></i></div>
-                <Link style={{width:'100%'}} to="/logOut">
+                {/*<Link style={{width:'100%'}} to="/logOut">*/}
 
-                    LogOut</Link>
-
+                {/*    </Link>*/}
+                LogOut
             </a>
         </div>
-    </nav>
+            <ToastContainer />
+
+        </nav>
 
 
     )

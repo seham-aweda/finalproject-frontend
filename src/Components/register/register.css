@@ -181,6 +181,7 @@ input[type="submit"]:active {
         flex-direction: column;
         position: relative;
         height: fit-content;
+        width: fit-content;
         background: rgba(162, 154, 154, 0.8);
     }
 
