@@ -2,6 +2,7 @@ import React from 'react'
 import Video from "./videoComp";
 import buttBeginnerPlan from "./workout-plans";
 import {useNavigate} from "react-router-dom";
+import {Button, Form, FormField} from "semantic-ui-react";
 
 const ButtBeginner = () => {
     const[exer,setExer]=React.useState(1)
@@ -13,7 +14,10 @@ const ButtBeginner = () => {
         setExer(exer+1)}
     }
     return(
-        <div>
+        <>
+            {localStorage.getItem('userToken')?
+
+                <div>
             {console.log(exer)}
             <div className={"videos"}>
                 {exer === 1 ? <Video video={buttBeginnerPlan[0].anim} time={buttBeginnerPlan[0].time} exe={buttBeginnerPlan[0].exercise} text={buttBeginnerPlan[0].text} func={comp}/>:''}
@@ -61,6 +65,14 @@ const ButtBeginner = () => {
             </div>
 
         </div>
+                :
+                <><Form loading style={{height:'90vh',width:'100vw',fontSize:'4vw',fontWeight:'500'}}>
+                    You Need To Authenticate
+                </Form>
+                    <FormField style={{fontSize:'2vw',fontWeight:'500'}}>  To Authenticate  : <Button onClick={()=>navigate('/')}>Click Here</Button></FormField></>
+            }
+        </>
+
     )
 }
 export default ButtBeginner

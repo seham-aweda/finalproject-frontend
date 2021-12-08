@@ -10,10 +10,10 @@ import {useNavigate} from "react-router-dom";
 const Profile=()=>{
     const navigate=useNavigate()
     const [note,setNote]=React.useState('')
-    const [load,setLoad]=React.useState(false)
+    // const [load,setLoad]=React.useState(false)
     const LogoutFromDevices=()=>{
         if(localStorage.getItem('userToken')!==null) {
-setLoad(true)
+// setLoad(true)
             axios.get('https://fit-at-home1.herokuapp.com/api/users/logoutAll', {
                 headers: {
                     'Authorization': localStorage.getItem('userToken')
@@ -28,7 +28,7 @@ setLoad(true)
                 }
             })
         }else{
-            setLoad(false)
+            // setLoad(false)
              toast('Please Authenticate')
         }
     }
@@ -53,9 +53,9 @@ setLoad(true)
     }
     return(
         <div>
-            {/*{console.log('load',load)}*/}
-            {/*{console.log(localStorage.getItem('userToken'))}{!load}*/}
-            <Form >
+            {localStorage.getItem('userToken')?
+<>
+                <Form >
 <Update/>
 
             <Form.Group>
@@ -75,13 +75,16 @@ setLoad(true)
 
             />
         </Form.Group>
-
+                    {note}
             </Form>
-            {/*{!load?<Form style={{margin:'40px',fontSize:'2vw',lineHeight:'3vw'}}>*/}
-            {/*Please Authenticate  :*/}
+            <Nav/></>
+           :
 
-            {/*<Button onClick={()=>navigate('/')}>Click Here</Button></Form>:<></>}*/}
-            <Nav/>
+<><Form loading style={{height:'90vh',width:'100vw',fontSize:'4vw',fontWeight:'500'}}>
+You Need To Authenticate
+</Form>
+<FormField style={{fontSize:'2vw',fontWeight:'500'}}>  To Authenticate  : <Button onClick={()=>navigate('/')}>Click Here</Button></FormField></>
+            }
 
         </div>
     )

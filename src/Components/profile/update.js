@@ -101,7 +101,6 @@ React.useEffect(()=>{
                              label='User name'
                              placeholder='User name'
                              name={'username'}
-                             // value={updateUser.username}
                                 onChange={updateUserState}
                          />
                          <FormField

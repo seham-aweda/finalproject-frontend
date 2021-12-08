@@ -7,6 +7,7 @@ import overweight from './img/overweight.jpg'
 import obesity from './img/obesity.jpg'
 import extremobesity from './img/extremobesity.jpg'
 import { useNavigate } from 'react-router-dom';
+import {Button, Form, FormField} from "semantic-ui-react";
 
 const Bmi = () => {
     const navigate=useNavigate()
@@ -78,7 +79,10 @@ const savingBMIToUser=()=>{
     }
 }
     return (
-        <div className={"ui container"}>
+        <>
+            {localStorage.getItem('userToken')?
+
+                <div className={"ui container"}>
             <div className="ui inverted segment">
                 <div className="ui inverted purple range" id="range-purple-inverted">
                     <input name={"height"} style={{width: "90%"}} type={'range'} min={"0"} max={'245'} step={"1"}
@@ -145,6 +149,14 @@ const savingBMIToUser=()=>{
                 <div style={{float:'right'}} ><button className="ui violet basic button" onClick={savingBMIToUser}>Continue</button><p>{note}</p></div>
 
         </div>
+                :
+                <><Form loading style={{height:'90vh',width:'100vw',fontSize:'4vw',fontWeight:'500'}}>
+                    You Need To Authenticate
+                </Form>
+                    <FormField style={{fontSize:'2vw',fontWeight:'500'}}>  To Authenticate  : <Button onClick={()=>navigate('/')}>Click Here</Button></FormField></>
+            }
+        </>
+
     )
 }
 export default Bmi

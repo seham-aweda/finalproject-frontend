@@ -27,7 +27,7 @@ function App() {
             <Route path="/workouts" element={<Workout/>}/>
             <Route path="/buttBeginner" element={<ButtBeginner/>}/>
             <Route path="/recipes" element={<Recipes/>}/>
-            <Route path="/logOut" element={<LogOut/>}/>
+            {/*<Route path="/logOut" element={<LogOut/>}/>*/}
           </Routes>
         </div>
       </Router>

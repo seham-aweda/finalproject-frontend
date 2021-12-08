@@ -15,12 +15,14 @@ import armAdvanced from './videos/armIntermediate.jpg'
 import absBeginner from './videos/abs begin ner.jpg'
 import absIntermediate from './videos/abs.jpg'
 import absAdvanced from './videos/absIntermediate.jpg'
+import {Button, Form, FormField} from "semantic-ui-react";
 const Workout = () => {
 const navigate=useNavigate()
-    const Move=()=>{
-    navigate('/buttBeginner')
-    }
+
     return(
+<>
+            {localStorage.getItem('userToken')?
+
         <div className="parent">
             <div className="Header">
              <h1>Pick A Challenge & FIRE The Place Out</h1>
@@ -66,6 +68,13 @@ const navigate=useNavigate()
             </div>
             <Nav/>
         </div>
+                :
+                <><Form loading style={{height:'90vh',width:'100vw',fontSize:'4vw',fontWeight:'500'}}>
+                    You Need To Authenticate
+                </Form>
+                    <FormField style={{fontSize:'2vw',fontWeight:'500'}}>  To Authenticate  : <Button onClick={()=>navigate('/')}>Click Here</Button></FormField></>
+            }
+</>
     )
 }
 export default Workout

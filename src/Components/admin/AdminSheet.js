@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from "axios";
-import { Card } from 'semantic-ui-react'
+import {Button, Card, Form, FormField} from 'semantic-ui-react'
 import ShowUser from "./ShowUser";
 import './admin.css'
 import {useNavigate} from 'react-router-dom';
@@ -42,7 +42,10 @@ const AdminSheet=()=>{
        setUsers(copyUsers.filter(user=>user._id!==id)
        )    }
     return(
-        <div className={"cont"}>
+        <>
+            {localStorage.getItem('userToken')?
+
+                <div className={"cont"}>
             <h3> Hello Admin </h3>
             <button className="ui negative basic button" onClick={LogOutUser}>
                 <i className="share square outline icon"></i>
@@ -61,9 +64,15 @@ const AdminSheet=()=>{
                 }
             }):""}
                 </Card.Group>
-
-
         </div>
+                :
+                <><Form loading style={{height:'90vh',width:'100vw',fontSize:'4vw',fontWeight:'500'}}>
+                    You Need To Authenticate
+                </Form>
+                    <FormField style={{fontSize:'2vw',fontWeight:'500'}}>  To Authenticate  : <Button onClick={()=>navigate('/')}>Click Here</Button></FormField></>
+            }
+        </>
+
     )
 }
 export default AdminSheet
