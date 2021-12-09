@@ -35,7 +35,7 @@ const Video = ({video, time, func, exe,text}) => {
                    <div style={{padding:'3vw',textAlign:'center',margin:'auto'}}>
                        {exe ? ` Exercise : ${exe}/18` : ""}
                    </div>   {video.slice(video.lastIndexOf('.') + 1) === 'mp4' ?
-                    <video autoPlay muted loop>
+                    <video autoPlay playsInline muted loop>
                         <source src={video}/>
                     </video> : <img src={video} alt={"Rest"}/>}
             </div>

@@ -4,6 +4,8 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import RecipeInfo from './Components/recipes/recipeInfo'
+
 import Register from "./Components/register/register";
 import Profile from "./Components/profile/profile";
 import Admin from "./Components/admin/admin";
@@ -27,7 +29,7 @@ function App() {
             <Route path="/workouts" element={<Workout/>}/>
             <Route path="/buttBeginner" element={<ButtBeginner/>}/>
             <Route path="/recipes" element={<Recipes/>}/>
-            {/*<Route path="/logOut" element={<LogOut/>}/>*/}
+            <Route path="/RecipeInfo/:recipeId" element={<RecipeInfo/>}/>
           </Routes>
         </div>
       </Router>

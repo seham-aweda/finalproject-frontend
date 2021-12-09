@@ -32,7 +32,7 @@ const Active = (e) =>{
     }
     return(
         <nav>
-        <div className="ui inverted four item inverted large bottom fixed menu">
+        <div  className="ui inverted four item large menu">
             {console.log(truthy)}
             <a className={truthy.Mine?"active grey item":'item'} onClick={Active} style={{display:'flex',flexDirection:'column'}}>
 
