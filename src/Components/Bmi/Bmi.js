@@ -65,7 +65,7 @@ const savingBMIToUser=()=>{
     if(value.weight && value.height){
         axios.post('https://fit-at-home1.herokuapp.com/api/users/updatingBMI/'+idBMI, value,{
             headers: {
-                'Authorization': localStorage.getItem('userToken')
+                'Authorization': sessionStorage.getItem('userToken')
             }}).then(res=> {
             console.log(res)
             if(res.status===200){
@@ -80,7 +80,7 @@ const savingBMIToUser=()=>{
 }
     return (
         <>
-            {localStorage.getItem('userToken')?
+            {sessionStorage.getItem('userToken')?
 
                 <div className={"ui container"}>
             <div className="ui inverted segment">

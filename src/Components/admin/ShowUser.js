@@ -9,7 +9,7 @@ const ShowUser=({method,id,username,age,bmi,email,isActive,weight,height})=>{
         method(e.target.id)
         axios.delete('https://fit-at-home1.herokuapp.com/api/users/delete/'+id,{
             headers:{
-                'Authorization':localStorage.getItem('userToken')
+                'Authorization':sessionStorage.getItem('userToken')
             }
         }).then(res=>{
             console.log(res)

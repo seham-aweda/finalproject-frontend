@@ -1,23 +1,17 @@
-.form{
-  display:flex;
-    flex-direction: column;
-  /*width:100%;*/
-  margin:auto;
-  justify-content: space-around;
-  align-items: center;
-  height:60%;
+body{
+  width:100vw;
+  height:100vh;
+  box-sizing: border-box;
 
 }
-/*}*/
-/*}*/
-@media (max-width: 768px) {
-  .form{
-    margin:0 15px -35px 15px;
-/*height:100vh;*/
-    width:fit-content;
-    /*align-content: space-evenly;*/
-  }
+.form{
+  display:flex;
+  flex-direction: column;
+  margin:auto;
+  align-items: center;
 }
+
+
 .usersheet .space-between{
   display:flex;
   justify-content: space-between;

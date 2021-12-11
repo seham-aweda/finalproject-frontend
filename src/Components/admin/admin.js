@@ -21,7 +21,7 @@ const Admin = () => {
                   setNote(res.data)
               } else {
                   if (res.data.user.admin === true) {
-                      localStorage.setItem("userToken",res.data.token);
+                      sessionStorage.setItem("userToken",res.data.token);
                       setNote(`Welcome Back ${res.data.user.username}`)
                       setAdmin({
                           email: '',

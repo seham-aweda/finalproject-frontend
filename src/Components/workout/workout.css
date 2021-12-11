@@ -20,10 +20,11 @@ size:auto
 }
 .parent {
     width:100%;
-    height:80%;
+    height:100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows:0.3fr repeat(4, 1fr) 0.3fr;
+    grid-template-rows:0.3fr repeat(4, 1fr) 0.3fr 0.1fr;
+    /*grid-template-rows:0.3fr repeat(4, 1fr) 0.3fr;*/
     grid-column-gap: 11px;
     grid-row-gap: 11px;
 }
@@ -58,5 +59,6 @@ letter-spacing:3px;
 .parent .ArmIntermediate { grid-area: 5 / 2 / 6 / 3; }
 .parent .ArmAdvanced { grid-area: 5 / 3 / 6 / 4; }
 .parent .Footer { grid-area: 6 / 1 / 7 / 4; }
+.parent .nav {margin:0;padding:0;grid-area: 7 / 1 / 8 / 4;  }
 
 

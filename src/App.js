@@ -13,8 +13,7 @@ import AdminSheet from "./Components/admin/AdminSheet";
 import Bmi from "./Components/Bmi/Bmi";
 import Recipes from "./Components/recipes/recipe";
 import Workout from "./Components/workout/workout";
-import LogOut from './Components/logout/logout'
-import ButtBeginner from "./Components/workout/butt-beginner/butt-beginner1";
+import ButtBeginner from "./Components/workout/ButtExercise/butt-beginner1";
 function App() {
   return (
     <div className="App">
@@ -27,7 +26,7 @@ function App() {
             <Route path="/adminSheet" element={<AdminSheet/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/workouts" element={<Workout/>}/>
-            <Route path="/buttBeginner" element={<ButtBeginner/>}/>
+            <Route path="/buttBeginner/:plan" element={<ButtBeginner/>}/>
             <Route path="/recipes" element={<Recipes/>}/>
             <Route path="/RecipeInfo/:recipeId" element={<RecipeInfo/>}/>
           </Routes>

@@ -3,7 +3,7 @@ import './register.css'
 import backgroundVideo from '../media/background video.mp4'
 import SignUp from "./signup";
 import LogIn from "./login";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -18,12 +18,12 @@ const Register = () => {
                     <SignUp/>
                     <div className="or">OR</div>
                     <LogIn/>
-                    <div className={'Admin'} onClick={()=>{
+                    <div className={'Admin'} onClick={() => {
                         navigate('/admin')
-                    }}> <input type={"submit"} value={'Admin'}/></div>
+                    }}><input type={"submit"} value={'Admin'}/></div>
                 </div>
             </div>
-            
+
         </div>
     )
 }

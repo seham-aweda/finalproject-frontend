@@ -7,83 +7,90 @@ import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from "react-router-dom";
 
-const Profile=()=>{
-    const navigate=useNavigate()
-    const [note,setNote]=React.useState('')
+const Profile = () => {
+    const navigate = useNavigate()
+    const [note, setNote] = React.useState('')
     // const [load,setLoad]=React.useState(false)
-    const LogoutFromDevices=()=>{
-        if(localStorage.getItem('userToken')!==null) {
+    const LogoutFromDevices = () => {
+        if (sessionStorage.getItem('userToken') !== null) {
 // setLoad(true)
             axios.get('https://fit-at-home1.herokuapp.com/api/users/logoutAll', {
                 headers: {
-                    'Authorization': localStorage.getItem('userToken')
+                    'Authorization': sessionStorage.getItem('userToken')
                 }
             }).then(res => {
                 if (res.status === 200) {
                     setNote('Your Request Has Been Taken Care Of...')
                     console.log(res)
+                    setTimeout(() => {
+                        navigate('/')
+                    }, 1500)
                 } else {
                     setNote(res.data.error)
                     console.log(res)
                 }
             })
-        }else{
+        } else {
             // setLoad(false)
-             toast('Please Authenticate')
+            toast('Please Authenticate')
         }
     }
 
-    const deleteMe=()=>{
-        if(localStorage.getItem('userToken')!==null) {
+    const deleteMe = () => {
+        if (sessionStorage.getItem('userToken') !== null) {
             axios.delete('https://fit-at-home1.herokuapp.com/api/users/delete/me', {
                 headers: {
-                    'Authorization': localStorage.getItem('userToken')
+                    'Authorization': sessionStorage.getItem('userToken')
                 }
-            }).then(res=>{console.log(res)
-            toast(`You Account Has Been Deleted`)
-                localStorage.removeItem('userToken')
-                setTimeout(()=>{
+            }).then(res => {
+                console.log(res)
+                toast(`You Account Has Been Deleted`)
+                sessionStorage.removeItem('userToken')
+                setTimeout(() => {
                     navigate('/')
-                },1500)
+                }, 1500)
             })
-        }else{
+        } else {
             toast('Please Authenticate')
 
         }
     }
-    return(
+    return (
         <div>
-            {localStorage.getItem('userToken')?
-<>
-                <Form >
-<Update/>
+            {sessionStorage.getItem('userToken') ?
+                <>
+                    <Form>
+                        <Update/>
 
-            <Form.Group>
-            <FormField
-                id='form-button-control-logoutall-public'
-                control={Button}
-                content='LogOut'
-                label='LogOut From All Devices'
-                onClick={LogoutFromDevices}
-            />
-                <FormField
-                id='form-button-control-delete-public'
-                control={Button}
-                content='Delete'
-                label='Delete Me'
-                onClick={deleteMe}
+                        <Form.Group>
+                            <FormField
+                                id='form-button-control-logoutall-public'
+                                control={Button}
+                                content='LogOut'
+                                label='LogOut From All Devices'
+                                onClick={LogoutFromDevices}
+                            />
+                            <FormField
+                                id='form-button-control-delete-public'
+                                control={Button}
+                                content='Delete'
+                                label='Delete Me'
+                                onClick={deleteMe}
 
-            />
-        </Form.Group>
-                    {note}
-            </Form>
-            <Nav/></>
-           :
+                            />
+                        </Form.Group>
+                        {note}
+                    </Form>
+                    <div style={{height: '55px'}}>
+                        <Nav/></div>
+                </>
+                :
 
-<><Form loading style={{height:'90vh',width:'100vw',fontSize:'4vw',fontWeight:'500'}}>
-You Need To Authenticate
-</Form>
-<FormField style={{fontSize:'2vw',fontWeight:'500'}}>  To Authenticate  : <Button onClick={()=>navigate('/')}>Click Here</Button></FormField></>
+                <><Form loading style={{height: '90vh', width: '100vw', fontSize: '4vw', fontWeight: '500'}}>
+                    You Need To Authenticate
+                </Form>
+                    <FormField style={{fontSize: '2vw', fontWeight: '500'}}> To Authenticate : <Button
+                        onClick={() => navigate('/')}>Click Here</Button></FormField></>
             }
 
         </div>

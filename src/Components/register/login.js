@@ -41,21 +41,21 @@ const LogIn = () => {
                     if (res.status !== 200) {
                         setNote(res.data)
                     } else {
-                        if(res.data.user.admin!==true){
-                            localStorage.setItem("userToken",res.data.token);
+                        if (res.data.user.admin !== true) {
+                            sessionStorage.setItem("userToken", res.data.token);
                             setNote('Welcome Back')
-                        setLoginUser({
-                            email: '',
-                            password: ''
-                        })
-                        setTimeout(() => {
-                            navigate('/workouts');
-                        }, 1500)
-                    }else  if(res.data.user.admin===true) {
+                            setLoginUser({
+                                email: '',
+                                password: ''
+                            })
+                            setTimeout(() => {
+                                navigate('/workouts');
+                            }, 1500)
+                        } else if (res.data.user.admin === true) {
                             setNote('YOU ARE THE ADMIN')
-                        }else{
-                        setNote('You\'re not a user')
-                    }
+                        } else {
+                            setNote('You\'re not a user')
+                        }
                     }
                 })
                 .catch(e => console.log(e))

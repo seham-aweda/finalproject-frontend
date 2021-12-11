@@ -4,6 +4,7 @@ import {Button, Card, Form, FormField} from 'semantic-ui-react'
 import ShowUser from "./ShowUser";
 import './admin.css'
 import {useNavigate} from 'react-router-dom';
+import Spinner from "../Spinner/spinner";
 const AdminSheet=()=>{
       const navigate = useNavigate();
     const [Users,setUsers]=React.useState([])
@@ -28,7 +29,7 @@ const AdminSheet=()=>{
         }).catch(e => console.log(e))
     }
     const LogOutUser=()=>{
-        localStorage.removeItem('userToken')
+        sessionStorage.removeItem('userToken')
          setTimeout(() => {
                           navigate('/');
                       }, 1500)
@@ -43,7 +44,7 @@ const AdminSheet=()=>{
        )    }
     return(
         <>
-            {localStorage.getItem('userToken')?
+            {sessionStorage.getItem('userToken')?
 
                 <div className={"cont"}>
             <h3> Hello Admin </h3>
@@ -62,7 +63,7 @@ const AdminSheet=()=>{
                                          email={user.email} isActive={user.isActive}/>
                     }
                 }
-            }):""}
+            }):<Spinner/>}
                 </Card.Group>
         </div>
                 :
