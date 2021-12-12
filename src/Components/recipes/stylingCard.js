@@ -1,11 +1,8 @@
 import React from 'react'
 import {Button, Card, Icon, Image} from "semantic-ui-react";
-import RecipeInfo from './recipeInfo'
 import {Link} from 'react-router-dom'
-import {useNavigate} from "react-router-dom";
 
 const OneRecipe = ({ingredients, method, title, photo, id}) => {
-    // const navigate=useNavigate()
     return (
         <Card>
             <Image src={`${photo}`}/>

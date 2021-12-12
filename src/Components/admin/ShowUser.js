@@ -3,7 +3,6 @@ import axios from "axios";
 import 'semantic-ui-css/semantic.min.css'
 import { Button, Card, Image } from 'semantic-ui-react'
 const ShowUser=({method,id,username,age,bmi,email,isActive,weight,height})=>{
-    // const {currentUserId,setCurrentUserId}=React.useState('')
 
     const deleteByAdmin=(e)=>{
         method(e.target.id)

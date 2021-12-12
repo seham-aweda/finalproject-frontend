@@ -1,12 +1,11 @@
 import React, {useRef} from 'react'
 import Countdown, {formatTimeDelta, zeroPad} from 'react-countdown';
-// import './butt-beginner.css'
+
 import {Button, Grid, Icon} from "semantic-ui-react";
 import {useNavigate} from "react-router-dom";
 
 
 const Video = ({video, time, func, exe, text, length}) => {
-    // const [pause,setPause]=React.useState(false)
     const navigate = useNavigate()
     const clockRef = useRef();
     const handleStart = () => clockRef.current.start();
@@ -21,9 +20,7 @@ const Video = ({video, time, func, exe, text, length}) => {
             return <span>{zeroPad(minutes)} : {zeroPad(seconds)}</span>;
         }
     };
-    // const pausing=()=>{
-    //     setPause(true)
-    // }
+
     return (
         <Grid style={{height:'100vh'}} stackable verticalAlign={'middle'}  >
             <Grid.Row>

@@ -10,10 +10,9 @@ import {useNavigate} from "react-router-dom";
 const Profile = () => {
     const navigate = useNavigate()
     const [note, setNote] = React.useState('')
-    // const [load,setLoad]=React.useState(false)
+
     const LogoutFromDevices = () => {
         if (sessionStorage.getItem('userToken') !== null) {
-// setLoad(true)
             axios.get('https://fit-at-home1.herokuapp.com/api/users/logoutAll', {
                 headers: {
                     'Authorization': sessionStorage.getItem('userToken')

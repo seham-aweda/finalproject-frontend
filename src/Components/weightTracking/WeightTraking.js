@@ -16,13 +16,7 @@ const WeightTracking=()=>{
     React.useEffect(()=>{
         getUser()
     },[])
-    // React.useEffect(()=>{
-    //     // if(weightsPersonArray.length>0&& updatedDaysArray.length>0){
-    //     if(document.querySelector('#myChart')) {
-    //         getChart(weightsPersonArray, updatedDaysArray)
-    //     }
-    // // }
-    // },[])
+
 
 
     const getUser=()=>{

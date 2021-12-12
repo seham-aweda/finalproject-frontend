@@ -8,7 +8,6 @@ import Spinner from "../Spinner/spinner";
 const AdminSheet=()=>{
       const navigate = useNavigate();
     const [Users,setUsers]=React.useState([])
-    // const [Note, setNote] = React.useState('')
     const [currentUserId,setCurrentUserId]=React.useState('')
 
     React.useEffect(()=>{
