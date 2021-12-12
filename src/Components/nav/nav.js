@@ -15,7 +15,7 @@ const Nav = () => {
         if (name === 'Training') {
             navigate('/workouts')
         }
-        if (name === 'Recipe') {
+        if (name === 'Recipes') {
             navigate('/recipes')
         }
         if (name === 'Tracking') {
@@ -55,7 +55,7 @@ const Nav = () => {
                 </MenuItem>
                 <MenuItem
                     name='Recipes'
-                    active={activeItem === 'Recipe'}
+                    active={activeItem === 'Recipes'}
                     onClick={Active}
                 ><i style={{color: '#4a16a2'}} className="fas fa-concierge-bell"></i>
                     &nbsp; &nbsp;     Recipes

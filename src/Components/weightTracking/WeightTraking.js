@@ -4,6 +4,7 @@ import axios from 'axios'
 import {toast} from "react-toastify";
 import Spinner from "../Spinner/spinner";
 import {Button, Grid, Input, Message, MessageItem} from "semantic-ui-react";
+import Nav from "../nav/nav";
 const WeightTracking=()=>{
     const [weightsPersonArray,setWeightsPersonArray]= React.useState([])
     const [updatedDaysArray,setUpdatedDaysArray]=React.useState([])
@@ -62,7 +63,7 @@ const WeightTracking=()=>{
                     'Authorization': sessionStorage.getItem('userToken')
                 }
             }).then(res => {
-                if(res.status===20){
+                if(res.status===200){
                 console.log('res',res)
                     setUserWeightHistory(res.data.weightTracker)
                 }else{
@@ -159,12 +160,15 @@ const WeightTracking=()=>{
                                 </MessageItem>
                                })}
                            </Message.List>
-                       </Message>:<></>}
+                       </Message>   :<></>}
                </Grid.Column>
            </Grid.Row>
        </Grid>
-                   :<Button content='Show Progress' onClick={update} />
+                   :<Grid centered verticalAlign={'middle'}>
+               <div style={{margin:'auto'}}><Button content='Show Progress' onClick={update} /></div></Grid>
        }
+       <div style={{height: '55px'}}>
+           <Nav/></div>
    </div>)
 }
 export default WeightTracking
