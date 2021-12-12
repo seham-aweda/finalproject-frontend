@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Button, Form, FormField, FormInput, Grid, Input, Label, Segment} from 'semantic-ui-react'
+import {Button, Card, Form, FormField, FormInput, Grid, Image, Input, Label, Segment} from 'semantic-ui-react'
 import './update.css'
 import axios from "axios";
 import {ToastContainer, toast} from 'react-toastify';
@@ -103,9 +103,24 @@ const Update = () => {
         }}>{console.log(updateUser)}
             {console.log(updateBMI)}
             {currUser.bmi ?
-                <ShowUser key={currUser._id} id={currUser._id} weight={currUser.bmi.weight} height={currUser.bmi.height}
-                          username={currUser.username} age={currUser.age} bmi={currUser.bmi.result}
-                          email={currUser.email} isActive={currUser.isActive}/> : <Spinner/>}
+                <Card >
+                    <Card.Content>
+                        <Image
+                            floated='right'
+                            size='mini'
+                            src='/images/avatar/large/steve.jpg'
+                        />
+                        <Card.Header>{currUser.username}</Card.Header>
+                        <Card.Meta>Active : {currUser.isActive?'🟢':'🔴'}</Card.Meta>
+                        <Card.Description >
+                            <div style={{ display:'flex',justifyContent: 'space-between'}}><span>Weight  :  {currUser.bmi.weight}</span><span>Height  :  {currUser.bmi.height}</span></div>
+                            <div style={{ display:'flex',justifyContent: 'space-between'}}><span>Age  :  {currUser.age}</span><span>BMI  :  {currUser.bmi.result}</span></div>
+
+                            E-mail  : {currUser.email}
+                        </Card.Description>
+                    </Card.Content>
+                </Card>
+                : <Spinner/>}
             <Form style={{marginTop: '7vw'}}>
                 <Form.Group widths='equal'>
                     <FormField

@@ -1,22 +1,26 @@
 import React from 'react'
-import Video from "./videoComp";
-import {buttAdvancedPlan, buttBeginnerPlan, buttIntermediatePlan} from "./thigh-workout-plans";
+import Video from "../ButtExercise/videoComp";
+import {
+    thighAdvancedPlan,
+    thighBeginnerPlan,
+    thighIntermediatePlan
+} from './thigh-workout-plans';
 import {useNavigate, useParams} from "react-router-dom";
 import {Button, Form, FormField} from "semantic-ui-react";
 import Spinner from "../../Spinner/spinner";
 
-const ButtBeginner = () => {
+const ThighExercise = () => {
     let [current,setCurrent]=React.useState([])
     const {plan} = useParams();
     React.useEffect(()=>{
-        if(plan==='buttBeginnerPlan') {
-            setCurrent(buttBeginnerPlan)
+        if(plan==='thighBeginnerPlan') {
+            setCurrent(thighBeginnerPlan)
         }
-        if(plan==='buttIntermediatePlan') {
-            setCurrent(buttIntermediatePlan)
+        if(plan==='thighIntermediatePlan') {
+            setCurrent(thighIntermediatePlan)
         }
-        if(plan==='buttAdvancedPlan'){
-            setCurrent(buttAdvancedPlan)
+        if(plan==='thighAdvancedPlan'){
+            setCurrent(thighAdvancedPlan)
         }
     },[])
     const [exer, setExer] = React.useState(1)
@@ -103,4 +107,4 @@ const ButtBeginner = () => {
 
     )
 }
-export default ButtBeginner
+export default ThighExercise

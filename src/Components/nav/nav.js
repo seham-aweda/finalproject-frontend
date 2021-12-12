@@ -18,6 +18,9 @@ const Nav = () => {
         if (name === 'Recipe') {
             navigate('/recipes')
         }
+        if (name === 'Tracking') {
+            navigate('/weightTracking')
+        }
 
         if (sessionStorage.getItem('userToken') !== null) {
             if (name === 'LogOut') {
@@ -35,7 +38,7 @@ const Nav = () => {
 
     return (<>
 
-            <Menu style={{height: '50px'}} icon fluid fixed={'bottom'} size={'large'} inverted widths={4}>
+            <Menu style={{height: '50px'}} icon fluid fixed={'bottom'} size={'large'} inverted widths={5}>
                 <MenuItem
                     name='Mine'
                     active={activeItem === 'Mine'}
@@ -51,11 +54,18 @@ const Nav = () => {
                     &nbsp; &nbsp;   Training
                 </MenuItem>
                 <MenuItem
-                    name='Recipe'
+                    name='Recipes'
                     active={activeItem === 'Recipe'}
                     onClick={Active}
                 ><i style={{color: '#4a16a2'}} className="fas fa-concierge-bell"></i>
-                    &nbsp; &nbsp;     Recipe
+                    &nbsp; &nbsp;     Recipes
+                </MenuItem>
+                <MenuItem
+                    name='Tracking'
+                    active={activeItem === 'Tracking'}
+                    onClick={Active}
+                ><Icon name={"weight"} style={{color: '#4a16a2'}}/>
+                    &nbsp; &nbsp;    Weight Tracking
                 </MenuItem>
                 <MenuItem
                     name='LogOut'

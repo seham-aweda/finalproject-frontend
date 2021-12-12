@@ -27,49 +27,67 @@ const navigate=useNavigate()
             <div className="Header">
              <h1>Pick A Challenge & FIRE The Place Out</h1>
             </div>
-            <Link to={`/buttBeginner/buttBeginnerPlan`}>
+            <Link to={`/buttExercise/buttBeginnerPlan`}>
             <div className="contain ButtBeginner"  >
                 <Challenge photo={buttBeginner} header={'Butt'} level={'Beginner'} time={11}/>
             </div>
             </Link>
-             <Link to={`/buttBeginner/buttIntermediatePlan`}>
+             <Link to={`/buttExercise/buttIntermediatePlan`}>
             <div className="contain ButtIntermediate">
                 <Challenge photo={buttIntermediate} header={'Butt'} level={'Intermediate'} time={11}/>
             </div>
              </Link>
-             <Link to={`/buttBeginner/buttAdvancedPlan`}>
+             <Link to={`/buttExercise/buttAdvancedPlan`}>
             <div className="contain ButtAdvanced">
                 <Challenge photo={buttAdvanced} header={'Butt'} level={'Advanced'} time={11}/>
             </div>
              </Link>
 
+             <Link to={`/thighExercise/thighBeginnerPlan`}>
             <div className="contain ThighBeginner">
                 <Challenge photo={thighBeginner} header={'Thigh'} level={'Beginner'} time={11}/>
             </div>
+             </Link>
+             <Link to={`/thighExercise/thighIntermediatePlan`}>
             <div className="contain ThighIntermediate">
                 <Challenge photo={thighIntermediate} header={'Thigh'} level={'Intermediate'} time={11}/>
             </div>
+             </Link>
+             <Link to={`/thighExercise/thighAdvancedPlan`}>
             <div className="contain ThighAdvanced">
                 <Challenge photo={thighAdvanced} header={'Thigh'} level={'Advanced'} time={11}/>
             </div>
+             </Link>
+             <Link to={`/ABSExercise/ABSBeginnerPlan`}>
             <div className="contain ABSBeginner">
                 <Challenge photo={absBeginner} header={'ABS'} level={'Beginner'} time={11}/>
             </div>
+             </Link>
+             <Link to={`/ABSExercise/ABSIntermediatePlan`}>
             <div className="contain ABSIntermediate">
                 <Challenge photo={absIntermediate} header={'ABS'} level={'Intermediate'} time={11}/>
             </div>
+             </Link>
+             <Link to={`/ABSExercise/ABSAdvancedPlan`}>
             <div className="contain ABSAdvanced">
                 <Challenge photo={absAdvanced} header={'ABS'} level={'Advanced'} time={11}/>
             </div>
+             </Link>
+             <Link to={`/armsExercise/armsBeginnerPlan`}>
             <div className="contain ArmBeginner">
                 <Challenge photo={armBeginner} header={'Arm'} level={'Beginner'} time={11}/>
             </div>
+             </Link>
+             <Link to={`/armsExercise/armsIntermediatePlan`}>
             <div className="contain ArmIntermediate">
                 <Challenge photo={armIntermediate} header={'Arm'} level={'Intermediate'} time={11}/>
             </div>
+             </Link>
+             <Link to={`/armsExercise/armsAdvancedPlan`}>
             <div className="contain ArmAdvanced">
                 <Challenge photo={armAdvanced} header={'Arm'} level={'Advanced'} time={11}/>
             </div>
+             </Link>
             <div className="Footer">
                 <h4 style={{textAlign:'center',fontSize:'140%',letterSpacing:'3px'}}>You Can Do ANYTHING,Believe In Yourself</h4>
             </div>

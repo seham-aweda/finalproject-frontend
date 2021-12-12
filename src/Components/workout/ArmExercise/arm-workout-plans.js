@@ -1,112 +1,91 @@
 import highSteppingVideo from '../videos/butt beginners/high-stepping.mp4'
-import buttKickingVideo from '../videos/butt beginners/butt-kicking.mp4'
-import standingGluteKickbacksLeftVideo from '../videos/butt beginners/standing-glute-kickbacks-left.mp4'
-import standingGluteKickbacksRightVideo from '../videos/butt beginners/standing-glute-kickbacks-right.mp4'
-import squatsVideo from '../videos/butt beginners/squats.mp4'
-import donkeyKicksLeftVideo from '../videos/butt beginners/monkey-kicks-lift.mp4'
-import donkeyKicksRightVideo from '../videos/butt beginners/monkey-kicks-right.mp4'
-import mountainClimberVideo from '../videos/butt beginners/mountain climber.mp4'
-import buttBridgeVideo from '../videos/butt beginners/butt-bridge.mp4'
+import jumpingJacksVideo from '../videos/thigh beginner/jumping-jacks.mp4'
+import armCircleClockwiseVideo from '../videos/arms/arm-circle-clockwise.mp4'
+import armScissorsVideo from '../videos/arms/arm-scissors.mp4'
+import chestPressPulseVideo from '../videos/arms/chest-press-pulse.mp4'
+import dynamicChestVideo from '../videos/arms/dynamic-chest.mp4'
+import kneePushUpsVideo from '../videos/arms/knee-push-ups.mp4'
+import punchesVideo from '../videos/arms/punches.mp4'
+import standingBicepsStretchLeftVideo from '../videos/arms/standing-biceps-stretch-left.mp4'
+import standingBicepsStretchRightVideo from '../videos/arms/standing-bicep-stretch-right.mp4'
+import tricepsDipsVideo from '../videos/arms/triceps-dips.mp4'
+import tricepsStretchLeftVideo from '../videos/arms/triceps-stretch-left.mp4'
+import tricepsStretchRightVideo from '../videos/arms/triceps-stretch-right.mp4'
+import wallPushUpsVideo from '../videos/arms/wall-push-ups.mp4'
 import kneelingLungeStretchLeftVideo from '../videos/butt beginners/kneeling-lunge-stretch-left.mp4'
 import kneelingLungeStretchRightVideo from '../videos/butt beginners/kneeling-lunge-stretch-right.mp4'
 import rest from '../videos/exercise-page/rest.jpg'
 
-//butt-advanced
-import benchGluteKickbackLeftVideo from '../videos/butt-adv/bench-glute-kick-back-left.mp4'
-import benchGluteKickbackRightVideo from '../videos/butt-adv/bench-glute-kick-back-right.mp4'
-import hipBridgeLegLiftLeftVideo from '../videos/butt-adv/hip-bridge-leg-lift-left.mp4'
-import hipBridgeLegLiftRightVideo from '../videos/butt-adv/hip-bridge-leg-lift-right.mp4'
-import crustyLungesVideo from '../videos/butt-adv/crusty-lunges.mp4'
-import leftLungeKneeHopsVideo from '../videos/butt-adv/left-lunge-knee-hops.mp4'
-import rightLungeKneeHopsVideo from '../videos/butt-adv/right-lunge-knee-hops.mp4'
-import sumoSquatVideo from '../videos/butt-adv/sumo-squat.mp4'
 
 //exercises
-const squats = 'Stand with your feet shoulder width apart and your arms stretched forward, then lower your body until your thighs are parallel with the floor. \n Your knees should be extended in the same direction as your toes. Return to the start position and do the next rep. \n This works the thighs, hips buttocks. quads, hamstrings and lower body'
+const jumpingJacks="Start with your feet together and your arms by your sided, then jump up with your feet apart and your hands overhead. \n Return to the start position then do next rep. This exercise provides a full-body workout and works all your large muscle groups."
+const armCircleClockwise='Stand on the floor with your arms extended straight out to the sides at shoulder height. \nMove your arms clockwise in circles fast.\n Try to do it as fast as you can.'
+const armScissors='Stand upright with your feet shoulder width apart. \n Stretch your arms in front of you at shoulder height with one arm overlap the other in the shape of the letter "X", and then spread them apart. \n Switch arms , and repeat th exercise.'
+const chestPressPulse='Hold your forearms together at shoulder height and bend your elbows with your hands together to make an "L" shape. \nThen lift your forearms up and down.'
+const dynamicChest='Stand on the floor with your feet shoulder width apart. Extend your arms forward at shoulder height with your palms facing each other. \nExtend your arms as far out as possible, then move them back to the front.Repeat the exercise.'
+const kneePushUps='Start in the regular push-up position, then let your knees touch the floor and raise your feet up off the floor.\n Next push your body up and down.'
+const punches='Stand with one of your legs forward and your knees bent slightly. Bend your elbows and clench your fists in front of your face. \n Extend one arm forward with the palm facing the floor. Take the arm back and repeat with the other arm.'
+const standingBicepsStretchLeft='Stand with your left arm close to a wall. Extend your left arm and put your left hands on the wall, then gently turn your body to the right.'
+const standingBicepsStretchRight='Stand with your right arm close to a wall. Extend your right arm and put your right hands on the wall, then gently turn your body to the right.'
+const tricepsDips='For the start position, sit on the chair. Then move your hip off the chair with your hands holding the edge of the chair. \nSlowly bend and stretch your arms to make your body go up and down. This is A great exercise for the triceps.'
+const tricepsStretchLeft='Put your left hand on your back, use your right hand to grab your left elbow and gently pull it. Hold this position for a few seconds.'
+const tricepsStretchRight='Put your right hand on your back, use your left hand to grab your right elbow and gently pull it. Hold this position for a few seconds.'
+const wallPushUps='Stand in front of a wall one big step away from it. Then put your hands out straight towards the wall and lean against it.Lift your heels. \n Slowly bend your elbows and press your upper body towards the wall. Push back and repeat the exercise. Remember to keep your body straight.'
 const highStepping = 'Run in place while pulling your knees as high as possible with each step.\n Keep your upper body upright during this exercise'
-const buttKicks = 'Stand up on the floor, then run in place while kicking your heel up to touch your butt with each step. \n try to di it as fast as you can. it\'s a great exercise for the gluteus and hamstrings'
-const standingGluteKickbacksRight = 'Stand straight with arms akimbo, then kick your right leg backwards and extend it as far as you can, meanwhile keep your legs and back straight and head up. \n Go back to the start position and repeat the exercise'
-const standingGluteKickbacksLeft = 'Stand straight with arms akimbo, then kick your left leg backwards and extend it as far as you can, meanwhile keep your legs and back straight and head up. \n Go back to the start position and repeat the exercise'
-const buttBridge = 'Lie on your back with knees bent and feet flat on the floor. Put your arms flat at your sides. \n Then lift your butt up and down'
-const mountainClimber = 'Start in the push-up position. Bend your right knee towards your chest and keep your left leg straight, then quickly switch from one leg to the other. \n This exercise strengthens multiple muscle groups'
-const donkeyKicksLeft = 'Start on all fours with your knees under your butt and your hands under your shoulders. \n Then lift your left leg and squeeze your butt as much as you can. Go back to the start position and repeat the exercise'
-const donkeyKicksRight = 'Start on all fours with your knees under your butt and your hands under your shoulders. \n Then lift your right leg and squeeze your butt as much as you can. Go back to the start position and repeat the exercise'
 const kneelingLungeStretchLeft = 'Start in a push-up position. Bring your left knee forward and drop your right knee on the floor. \n Raise your upper body and put your hands on your waist. Then push your hips forward while keeping your upper body straight.\n Please make sure your front knee won\'t go over your toes.Hold this position for a few seconds'
 const kneelingLungeStretchRight = 'Start in a push-up position. Bring your right knee forward and drop your left knee on the floor. \n Raise your upper body and put your hands on your waist. Then push your hips forward while keeping your upper body straight.\n Please make sure your front knee won\'t go over your toes.Hold this position for a few seconds'
-const lunges = 'Start with your feet shoulder width apart and your hands on your hips. \n Take a step forward with your right leg and lower your body until your right thigh is parallel with the floor. \n Then return and switch to the other leg, This exercise strengthens the quadriceps, gluteus maximus and hamstrings'
-const bottomLegLiftLeft = 'Lie on your left side with your head resting on your left hand. \n Then put your right foot forward on the floor. \n Lift your left leq up and down'
-const bottomLegLiftRight = 'Lie on your right side with your head resting on your right hand. \n Then put your left foot forward on the floor. \n Lift your right leq up and down'
-const fireHydrantLeft = 'Start on all fours with your knees under your butt and your hands under your shoulders. \n Then lift your left leg to the side at a 90 degree angle'
-const fireHydrantRight = 'Start on all fours with your knees under your butt and your hands under your shoulders. \n Then lift your right leg to the side at a 90 degree angle'
-const splitSquatLeft = 'Take a big step forward with your left leg and keep your upper body straight. \n Then make your body go straight down and up.'
-const splitSquatRight = 'Take a big step forward with your right leg and keep your upper body straight. \n Then make your body go straight down and up.'
-const benchGluteKickbackLeft='Start with your right knee and your hands on a bench, put your hands directly under your shoulders. \n Then kick your left leg back until iy is parallel with the ground. Return to the starting position and repeat the exercise.'
-const benchGluteKickbackRight='Start with your left knee and your hands on a bench, put your hands directly under your shoulders. \n Then kick your right leg back until iy is parallel with the ground. Return to the starting position and repeat the exercise.'
-const hipBridgeLegLiftLeft='Lie on your back with your knees bent and feet flat on the floor. Then lift one leg up while raising your hips off the floor as high as you can. \n Go back to the start position and repeat the exercise.'
-const hipBridgeLegLiftRight='Lie on your back with your knees bent and feet flat on the floor. Then lift one leg up while raising your hips off the floor as high as you can. \n Go back to the start position and repeat the exercise.'
-const crustyLunges='Stand straight up. Then step back with your left leg to the right, and bend your knees at the same time. \n Go back to the start position and switch to the other side.'
-const leftLungeKneeHops='Stand straight up. Then step your left leg back and lower your body. \n When you come up, raise your left knee as high as you can.'
-const rightLungeKneeHops='Stand straight up. Then step your right leg back and lower your body. \n When you come up, raise your right knee as high as you can.'
-const sumoSquat='Stand with your feet 6-12 inches apart. Stretch your arms in front of you. \n Lower your body until your thighs are parallel to the floor. Return to the starting position and repeat the exercise.'
-export const buttBeginnerPlan = [
+
+export const armBeginnerPlan = [
     {anim: highSteppingVideo, time: 30, exercise: 1, text: highStepping},
     {anim: rest, time: 8},
-    {anim: buttKickingVideo, time: 30, exercise: 2, text: buttKicks},
+    {anim: chestPressPulseVideo, time: 30, exercise: 2, text: chestPressPulse},
+    {anim: rest, time: 15},
+    {anim: jumpingJacksVideo, time: 30, exercise: 3, text: jumpingJacks},
+    {anim: rest, time: 15},
+    {anim: armScissorsVideo, time: 20, exercise: 4, text: armScissors},
+    {anim: rest, time: 15},
+    {anim: punchesVideo, time: 30, exercise: 5, text: punches},
+    {anim: rest, time: 15},
+    {anim: tricepsDipsVideo, time: '12times', exercise: 6, text: tricepsDips},
+    {anim: rest, time: 15},
+    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 7, text:kneelingLungeStretchLeft },
     {anim: rest, time: 8},
-    {anim: squatsVideo, time: '12times', exercise: 3, text: squats},
-    {anim: rest, time: 8},
-    {anim: standingGluteKickbacksRightVideo, time: '10times', exercise: 4, text: standingGluteKickbacksRight},
-    {anim: rest, time: 8},
-    {anim: standingGluteKickbacksLeftVideo, time: '10times', exercise: 5, text: standingGluteKickbacksLeft},
-    {anim: rest, time: 8},
-    {anim: buttBridgeVideo, time: '10times', exercise: 6, text: buttBridge},
-    {anim: rest, time: 8},
-    {anim: mountainClimberVideo, time: '14times', exercise: 7, text: mountainClimber},
-    {anim: rest, time: 8},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text:kneelingLungeStretchLeft },
-    {anim: rest, time: 8},
-    {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 9, text: kneelingLungeStretchRight},
+    {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 8, text: kneelingLungeStretchRight},
 ]
 
-export const buttIntermediatePlan = [
+export const armIntermediatePlan = [
     {anim: highSteppingVideo, time: 30, exercise: 1, text: highStepping},
     {anim: rest, time: 8},
-    {anim: buttKickingVideo, time: 30, exercise: 2, text: buttKicks},
+    {anim: chestPressPulseVideo, time: 30, exercise: 2, text: chestPressPulse},
+    {anim: rest, time: 15},
+    {anim: jumpingJacksVideo, time: 30, exercise: 3, text: jumpingJacks},
+    {anim: rest, time: 15},
+    {anim: armCircleClockwiseVideo, time: 20, exercise: 4, text: armCircleClockwise},
+    {anim: rest, time: 15},
+    {anim: dynamicChestVideo, time: 20, exercise: 5, text: dynamicChest},
+    {anim: rest, time: 15},
+    {anim: kneePushUpsVideo, time: '10times', exercise: 6, text: kneePushUps},
+    {anim: rest, time: 15},
+    {anim: tricepsStretchLeftVideo, time: 30, exercise: 7, text:tricepsStretchLeft },
     {anim: rest, time: 8},
-    {anim: squatsVideo, time: '12times', exercise: 3, text: squats},
-    {anim: rest, time: 8},
-    {anim: benchGluteKickbackLeftVideo, time: '16times', exercise: 4, text: benchGluteKickbackLeft},
-    {anim: rest, time: 8},
-    {anim: benchGluteKickbackRightVideo, time: '16times', exercise: 5, text: benchGluteKickbackRight},
-    {anim: rest, time: 8},
-    {anim: hipBridgeLegLiftLeftVideo, time: '12times', exercise: 6, text: hipBridgeLegLiftLeft},
-    {anim: rest, time: 8},
-    {anim: hipBridgeLegLiftRightVideo, time: '12times', exercise: 7, text: hipBridgeLegLiftRight},
-    {anim: rest, time: 8},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text:kneelingLungeStretchLeft },
-    {anim: rest, time: 8},
-    {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 9, text: kneelingLungeStretchRight},
+    {anim: tricepsStretchRightVideo, time: 30, exercise: 8, text: tricepsStretchRight},
 ]
 
-export const buttAdvancedPlan = [
+export const armAdvancedPlan = [
     {anim: highSteppingVideo, time: 30, exercise: 1, text: highStepping},
     {anim: rest, time: 8},
-    {anim: buttKickingVideo, time: 30, exercise: 2, text: buttKicks},
+    {anim: chestPressPulseVideo, time: 30, exercise: 2, text: chestPressPulse},
+    {anim: rest, time: 15},
+    {anim: jumpingJacksVideo, time: 30, exercise: 3, text: jumpingJacks},
+    {anim: rest, time: 15},
+    {anim: wallPushUpsVideo, time: '12times', exercise: 4, text: wallPushUps},
+    {anim: rest, time: 15},
+    {anim: standingBicepsStretchLeftVideo, time: 30, exercise: 5, text: standingBicepsStretchLeft},
+    {anim: rest, time: 15},
+    {anim: standingBicepsStretchRightVideo, time: 30, exercise: 6, text: standingBicepsStretchRight},
+    {anim: rest, time: 15},
+    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 7, text:kneelingLungeStretchLeft },
     {anim: rest, time: 8},
-    {anim: donkeyKicksLeftVideo, time: '12times', exercise: 3, text: donkeyKicksLeft},
-    {anim: rest, time: 8},
-    {anim: donkeyKicksRightVideo, time: '12times', exercise: 4, text: donkeyKicksRight},
-    {anim: rest, time: 8},
-    {anim: crustyLungesVideo, time: '14times', exercise: 5, text: crustyLunges},
-    {anim: rest, time: 8},
-    {anim: leftLungeKneeHopsVideo, time: '12times', exercise: 6, text: leftLungeKneeHops},
-    {anim: rest, time: 8},
-    {anim: rightLungeKneeHopsVideo, time: '12times', exercise: 7, text: rightLungeKneeHops},
-    {anim: rest, time: 8},
-    {anim: sumoSquatVideo, time: '15times', exercise: 8, text: sumoSquat},
-    {anim: rest, time: 8},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 9, text:kneelingLungeStretchLeft },
-    {anim: rest, time: 8},
-    {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 10, text: kneelingLungeStretchRight},
+    {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 8, text: kneelingLungeStretchRight},
 ]
 

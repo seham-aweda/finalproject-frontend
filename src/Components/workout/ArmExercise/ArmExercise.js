@@ -1,22 +1,22 @@
 import React from 'react'
-import Video from "./videoComp";
-import {buttAdvancedPlan, buttBeginnerPlan, buttIntermediatePlan} from "./arm-workout-plans";
+import Video from "../ButtExercise/videoComp";
+import {armBeginnerPlan, armIntermediatePlan, armAdvancedPlan} from "./arm-workout-plans";
 import {useNavigate, useParams} from "react-router-dom";
 import {Button, Form, FormField} from "semantic-ui-react";
 import Spinner from "../../Spinner/spinner";
 
-const ButtBeginner = () => {
+const ArmExercise = () => {
     let [current,setCurrent]=React.useState([])
     const {plan} = useParams();
     React.useEffect(()=>{
-        if(plan==='buttBeginnerPlan') {
-            setCurrent(buttBeginnerPlan)
+        if(plan==='armsBeginnerPlan') {
+            setCurrent(armBeginnerPlan)
         }
-        if(plan==='buttIntermediatePlan') {
-            setCurrent(buttIntermediatePlan)
+        if(plan==='armsIntermediatePlan') {
+            setCurrent(armIntermediatePlan)
         }
-        if(plan==='buttAdvancedPlan'){
-            setCurrent(buttAdvancedPlan)
+        if(plan==='armsAdvancedPlan'){
+            setCurrent(armAdvancedPlan)
         }
     },[])
     const [exer, setExer] = React.useState(1)
@@ -77,10 +77,8 @@ const ButtBeginner = () => {
                                               func={comp}/> : ""}
                         {exer === 16 ? <Video length={current.length} video={current[15].anim} time={current[15].time}
                                               func={comp}/> : ""}
-                        {exer === 17 ? <Video length={current.length} video={current[16].anim} time={current[16].time}
-                                              exe={current[16].exercise} text={current[16].text}
-                                              func={comp}/> : ""}
-                        {exer === 18 ?
+
+                        {exer === 17 ?
                             <div style={{textAlign: 'center', padding: '10vw'}}>{'Done For Today, You Can Rest Now'}
                                 <br/>
                                 <br/>
@@ -103,4 +101,4 @@ const ButtBeginner = () => {
 
     )
 }
-export default ButtBeginner
+export default ArmExercise

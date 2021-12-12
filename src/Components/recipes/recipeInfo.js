@@ -42,9 +42,9 @@ const RecipeInfo = () => {
                 Back
             </Button>
             <h1>Healthy Meal In 30 Min</h1>
-            <br/></div>
+           </div>
         {recipe.length > 0 ? <>
-            <Grid style={{fontSize: '1.2vw'}} divided stackable verticalAlign={'middle'}>
+            <Grid divided stackable verticalAlign={'middle'}>
                 <Grid.Column width={4}>
                     <Image src={`${recipe[0].photo}`} size='large'/>
                 </Grid.Column>

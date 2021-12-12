@@ -25,7 +25,7 @@ const Recipes = () => {
             {sessionStorage.getItem('userToken') ?
                 <div>
                     <h1>Recipes</h1>
-                    {recipes ? <CardGroup itemsPerRow={5} stackable>
+                    {recipes ? <CardGroup itemsPerRow={4} stackable>
                         {recipes.map(recipe => {
                             return <OneRecipe id={recipe._id} ingredients={recipe.ingredients} method={recipe.methods}
                                               title={recipe.title} photo={recipe.photo}/>
