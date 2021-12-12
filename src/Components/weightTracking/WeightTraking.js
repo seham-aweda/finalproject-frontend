@@ -16,10 +16,13 @@ const WeightTracking=()=>{
     React.useEffect(()=>{
         getUser()
     },[])
-    React.useEffect(()=>{
-        if(weightsPersonArray.length>0&& updatedDaysArray.length>0){
-        getChart(weightsPersonArray,updatedDaysArray)}
-    },[])
+    // React.useEffect(()=>{
+    //     // if(weightsPersonArray.length>0&& updatedDaysArray.length>0){
+    //     if(document.querySelector('#myChart')) {
+    //         getChart(weightsPersonArray, updatedDaysArray)
+    //     }
+    // // }
+    // },[])
 
 
     const getUser=()=>{
@@ -36,6 +39,7 @@ const WeightTracking=()=>{
         })
 
     }
+
     const update=()=>{
         const sortedActivities = userWeightHistory.map(obj => {
             return {...obj, date: obj.date.substring(0, obj.date.indexOf('T'))}
@@ -66,6 +70,19 @@ const WeightTracking=()=>{
                 if(res.status===200){
                 console.log('res',res)
                     setUserWeightHistory(res.data.weightTracker)
+                    const sortedActivities = res.data.weightTracker.map(obj => {
+                        return {...obj, date: obj.date.substring(0, obj.date.indexOf('T'))}
+                    })
+                    let days = sortedActivities.map(ss => {
+                        return `${new Date(ss.date).getDate()}/${new Date(ss.date).getMonth()+1}`
+                    })
+                    console.log(days)
+                    setUpdatedDaysArray(days)
+                    const weights=res.data.weightTracker.map(obj=>{
+                        return obj.weight
+                    })
+                    console.log(weights)
+                    setWeightsPersonArray(weights)
                 }else{
                     console.log('errrr',res)
                     setNote(res.data)
@@ -78,6 +95,8 @@ const WeightTracking=()=>{
         }
     }
     const DeleteWeightFromUser=(e)=>{
+        // document.getElementById('myChart').innerHTML=''
+
         console.log(e.target.id)
     axios.put('https://fit-at-home1.herokuapp.com/api/users/DeleteWeight/'+e.target.id,{},{
         headers: {
@@ -89,10 +108,16 @@ const WeightTracking=()=>{
         console.log(err)
     })
     }
-    let myChart;
+    var myChart;
     function getChart(weight,days){
- if (myChart)
-       myChart.destroy()
+
+     document.getElementById( "myChart" ).remove();
+     let canvas = document.createElement('canvas');
+     canvas.setAttribute('id','myChart');
+     // canvas.setAttribute('width','300');
+     // canvas.setAttribute('height','100');
+     document.querySelector('#chart-container').appendChild(canvas)
+
         const ctx = document.getElementById('myChart').getContext('2d');
          myChart = new Chart(ctx, {
             type: 'line',
@@ -139,14 +164,22 @@ const WeightTracking=()=>{
            <Grid.Row>
                <Grid.Column>
 <h1>Weight Tracking...</h1>
-       <div style={{ AlignContent:'center', height:'50%',width:'80%'}}>
+       <div id={'chart-container'} style={{ AlignContent:'center', height:'50%',width:'80%'}}>
                <canvas id="myChart"></canvas>
        </div>
                </Grid.Column>
-           </Grid.Row>
+           </Grid.Row >
+           <Grid.Row >
+               <Grid.Column >
            <Button content='Add Weight' onClick={addWeightToUser} />
            <Input onChange={changeHandler} name={'weight'} type={'number'} placeholder='Weight...' />
-           {note}
+           <div>
+           {note}</div>
+           <Button content='Show Chart' onClick={()=>{
+               getChart(weightsPersonArray, updatedDaysArray)
+           }} />
+               </Grid.Column>
+           </Grid.Row >
            <Grid.Row>
                <Grid.Column >
                    {userWeightHistory?
@@ -155,6 +188,7 @@ const WeightTracking=()=>{
                            <Message.List>
                                {userWeightHistory.map(ele => {
                                 return <MessageItem key={ele._id}>Weight: {ele.weight} At {ele.date} <Button id={ele._id} content='Delete Weight' onClick={(e)=> {
+
                                     DeleteWeightFromUser(e)
                                 }} />
                                 </MessageItem>
