@@ -22,9 +22,7 @@ const ButtBeginner = () => {
     const [exer, setExer] = React.useState(1)
     const navigate = useNavigate()
     const comp = (ele) => {
-        console.log(ele)
         if (ele === true) {
-            console.log('2', ele)
             setExer(exer + 1)
         }
     }
@@ -33,8 +31,6 @@ const ButtBeginner = () => {
             {sessionStorage.getItem('userToken') ?
 
                 <div>
-                    {console.log(exer)}
-                    {console.log(plan)}
                     {current.length>0?
                     <div className={"videos"}>
                         {exer === 1 ? <Video length={current.length} video={current[0].anim} time={current[0].time}

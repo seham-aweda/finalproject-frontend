@@ -16,7 +16,6 @@ const Recipes = () => {
     }, [])
     const AllRecipes = () => {
         axios.get('https://fit-at-home1.herokuapp.com/api/recipe/getAllRecipes').then(res => {
-            console.log(res.data)
             setRecipes(res.data)
         }).catch(err => console.log(err))
     }

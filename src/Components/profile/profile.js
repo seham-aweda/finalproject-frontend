@@ -20,17 +20,14 @@ const Profile = () => {
             }).then(res => {
                 if (res.status === 200) {
                     setNote('Your Request Has Been Taken Care Of...')
-                    console.log(res)
                     setTimeout(() => {
                         navigate('/')
                     }, 1500)
                 } else {
                     setNote(res.data.error)
-                    console.log(res)
                 }
             })
         } else {
-            // setLoad(false)
             toast('Please Authenticate')
         }
     }

@@ -45,7 +45,6 @@ const Update = () => {
     }
 
     const updateUserState = (e) => {
-        console.log(e.target.name)
         if (e.target.value !== "") {
             setUpdateUser({...updateUser, [e.target.name]: e.target.value})
         }
@@ -55,7 +54,6 @@ const Update = () => {
         const asArray = Object.entries(updateUser);
         const filtered = asArray.filter(([key, value]) => value !== '');
         const UserStrings = Object.fromEntries(filtered);
-        console.log(UserStrings)
         axios.put('https://fit-at-home1.herokuapp.com/api/users/update/me', UserStrings, {
             headers: {
                 'Authorization': sessionStorage.getItem('userToken')
@@ -71,7 +69,6 @@ const Update = () => {
     }
     const updateBmiState = (e) => {
         if (e.target.value.match(/^[0-9]+$/) !== null) {
-            console.log('yay')
             setUpdateBMI({...updateBMI, [e.target.name]: e.target.value})
         }
     }
@@ -79,7 +76,6 @@ const Update = () => {
         const asArray = Object.entries(updateBMI);
         const filtered = asArray.filter(([key, value]) => value !== '');
         const BMIStrings = Object.fromEntries(filtered);
-        console.log(BMIStrings)
 
         axios.put('https://fit-at-home1.herokuapp.com/api/bmi/update', BMIStrings, {
             headers: {
@@ -99,9 +95,7 @@ const Update = () => {
             flexDirection: 'column',
             alignItems: 'center',
             marginTop: '2vw'
-        }}>{console.log(updateUser)}
-            {console.log(updateBMI)}
-            {currUser.bmi ?
+        }}>{currUser.bmi ?
                 <Card >
                     <Card.Content>
                         <Image

@@ -19,7 +19,6 @@ const AdminSheet=()=>{
 
     const AllUsers=()=>{
         axios.get('https://fit-at-home1.herokuapp.com/api/users').then(res => {
-            console.log(res.data)
             if (res.status !== 200) {
                 console.log(res.data)
             } else {
@@ -56,7 +55,6 @@ const AdminSheet=()=>{
             {Users?Users.map(user=>{
                 if(user.admin!==true) {
                     if (user.bmi) {
-                        console.log(user)
                         return <ShowUser method={getIdFromSon} key={user._id} id={user._id} weight={user.bmi.weight} height={user.bmi.height}
                                          username={user.username} age={user.age} bmi={user.bmi.result}
                                          email={user.email} isActive={user.isActive}/>

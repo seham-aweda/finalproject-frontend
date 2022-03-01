@@ -19,13 +19,12 @@ const LogIn = () => {
 
     const GetAllUsers = () => {
         axios.get('https://fit-at-home1.herokuapp.com/api/users').then(res => {
-            console.log(res.data)
             if (res.status !== 200) {
                 setNote(res.data)
             } else {
                 setUsers(res.data)
             }
-        }).catch(e => setNote(e))
+        }).catch(e => setNote(e.message))
     }
     const changeHandler = (e) => {
         setLoginUser({...loginUser, [e.target.name]: e.target.value})
@@ -33,11 +32,9 @@ const LogIn = () => {
 
     const LoggingIn = () => {
         const exist = users.find(user => user.email === loginUser.email)
-        console.log(exist)
         if (exist) {
             axios.post('https://fit-at-home1.herokuapp.com/api/users/login', loginUser)
                 .then(res => {
-                    console.log(res.data)
                     if (res.status !== 200) {
                         setNote(res.data)
                     } else {

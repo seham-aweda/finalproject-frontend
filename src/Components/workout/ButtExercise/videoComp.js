@@ -56,7 +56,6 @@ const Video = ({video, time, func, exe, text, length}) => {
                                                    renderer={renderer}
                                                    ref={clockRef}
                                                    onComplete={() => {
-                                                       console.log('next')
                                                        func(true)
                                                    }}/><br/><br/>
                                         <br/></div>

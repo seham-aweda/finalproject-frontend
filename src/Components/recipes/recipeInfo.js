@@ -13,7 +13,6 @@ const RecipeInfo = () => {
     }, [])
     const getRecipeById = () => {
         axios.get('https://fit-at-home1.herokuapp.com/api/recipe/byId/' + recipeId).then(res => {
-            console.log(res)
             if (res.status === 200) {
                 setRecipe(res.data)
             } else {
@@ -32,7 +31,6 @@ const RecipeInfo = () => {
     }
 
     return (<div>
-        {console.log(recipe)}
         <div>
             <Button basic color='purple'
                     onClick={() => {
