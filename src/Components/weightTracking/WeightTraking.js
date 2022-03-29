@@ -2,121 +2,113 @@ import React from 'react'
 import Chart from 'chart.js/auto';
 import axios from 'axios'
 import {toast} from "react-toastify";
-import Spinner from "../Spinner/spinner";
 import {Button, Grid, Input, Message, MessageItem} from "semantic-ui-react";
 import Nav from "../nav/nav";
-const WeightTracking=()=>{
-    const [weightsPersonArray,setWeightsPersonArray]= React.useState([])
-    const [updatedDaysArray,setUpdatedDaysArray]=React.useState([])
-    const [userWeightHistory,setUserWeightHistory]=React.useState('')
-    const [newWeight,setNewWeight]=React.useState({
-        weight:''
+
+const WeightTracking = () => {
+    const [weightsPersonArray, setWeightsPersonArray] = React.useState([])
+    const [updatedDaysArray, setUpdatedDaysArray] = React.useState([])
+    const [userWeightHistory, setUserWeightHistory] = React.useState('')
+    const [newWeight, setNewWeight] = React.useState({
+        weight: ''
     })
-    const [note,setNote]=React.useState('')
-    React.useEffect(()=>{
+    const [note, setNote] = React.useState('')
+    React.useEffect(() => {
         getUser()
-    },[])
+    }, [])
 
 
-
-    const getUser=()=>{
-        axios.get('https://fit-at-home1.herokuapp.com/api/users/me',{headers: {
+    const getUser = () => {
+        axios.get('https://fit-at-home1.herokuapp.com/api/users/me', {
+            headers: {
                 'Authorization': sessionStorage.getItem('userToken')
-            }}).then(res=>{
+            }
+        }).then(res => {
             console.log(res.data.weightTracker)
-            if(res.status===200) {
+            if (res.status === 200) {
                 setUserWeightHistory(res.data.weightTracker)
-                // console.log(res.data.weightTracker)
-            }else{
+            } else {
                 toast(res.data)
             }
         })
 
     }
 
-    const update=()=>{
+    const update = () => {
         const sortedActivities = userWeightHistory.map(obj => {
             return {...obj, date: obj.date.substring(0, obj.date.indexOf('T'))}
         })
         let days = sortedActivities.map(ss => {
-            return `${new Date(ss.date).getDate()}/${new Date(ss.date).getMonth()+1}`
+            return `${new Date(ss.date).getDate()}/${new Date(ss.date).getMonth() + 1}`
         })
-        console.log(days)
         setUpdatedDaysArray(days)
-        const weights=userWeightHistory.map(obj=>{
+        const weights = userWeightHistory.map(obj => {
             return obj.weight
         })
-        console.log(weights)
         setWeightsPersonArray(weights)
     }
-    const changeHandler=(e)=>{
-        // console.log(e.target.name)
-        setNewWeight({...newWeight,[e.target.name]:parseInt(e.target.value)})
+    const changeHandler = (e) => {
+        setNewWeight({...newWeight, [e.target.name]: parseInt(e.target.value)})
     }
-    const addWeightToUser=()=>{
+    const addWeightToUser = () => {
 
-        if(newWeight.weight!=="") {
+        if (newWeight.weight !== "") {
             axios.put('https://fit-at-home1.herokuapp.com/api/users/updatingWeight', newWeight, {
                 headers: {
                     'Authorization': sessionStorage.getItem('userToken')
                 }
             }).then(res => {
-                if(res.status===200){
-                    console.log('res',res)
+                if (res.status === 200) {
+                    console.log('res', res)
                     setUserWeightHistory(res.data.weightTracker)
                     const sortedActivities = res.data.weightTracker.map(obj => {
                         return {...obj, date: obj.date.substring(0, obj.date.indexOf('T'))}
                     })
                     let days = sortedActivities.map(ss => {
-                        return `${new Date(ss.date).getDate()}/${new Date(ss.date).getMonth()+1}`
+                        return `${new Date(ss.date).getDate()}/${new Date(ss.date).getMonth() + 1}`
                     })
-                    console.log(days)
                     setUpdatedDaysArray(days)
-                    const weights=res.data.weightTracker.map(obj=>{
+                    const weights = res.data.weightTracker.map(obj => {
                         return obj.weight
                     })
-                    console.log(weights)
                     setWeightsPersonArray(weights)
-                }else{
-                    console.log('errrr',res)
+                } else {
+                    console.log('errrr', res)
                     setNote(res.data)
                 }
-            }).catch(err=>{
+            }).catch(err => {
                 console.log(err)
             })
-        }else{
+        } else {
             setNote('Insert Some Weight Please!')
         }
     }
-    const DeleteWeightFromUser=(e)=>{
-        // document.getElementById('myChart').innerHTML=''
+    const DeleteWeightFromUser = (e) => {
 
         console.log(e.target.id)
-        axios.put('https://fit-at-home1.herokuapp.com/api/users/DeleteWeight/'+e.target.id,{},{
+        axios.put('https://fit-at-home1.herokuapp.com/api/users/DeleteWeight/' + e.target.id, {}, {
             headers: {
                 'Authorization': sessionStorage.getItem('userToken')
             }
-        }).then(res=>{
+        }).then(res => {
             setUserWeightHistory(res.data.weightTracker)
-        }).catch(err=>{
+        }).catch(err => {
             console.log(err)
         })
     }
     var myChart;
-    function getChart(weight,days){
 
-        document.getElementById( "myChart" ).remove();
+    function getChart(weight, days) {
+        document.getElementById("myChart").remove();
         let canvas = document.createElement('canvas');
-        canvas.setAttribute('id','myChart');
-        // canvas.setAttribute('width','300');
-        // canvas.setAttribute('height','100');
+        canvas.setAttribute('id', 'myChart');
         document.querySelector('#chart-container').appendChild(canvas)
 
         const ctx = document.getElementById('myChart').getContext('2d');
         myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels:days,
+                labels: days,
                 datasets: [{
                     label: '# of Weights',
                     data: weight,
@@ -139,7 +131,7 @@ const WeightTracking=()=>{
                     borderWidth: 2,
                     fill: true,
                     tension: 0.5,
-                    hidden:false
+                    hidden: false
                 }]
             },
             options: {
@@ -152,48 +144,51 @@ const WeightTracking=()=>{
             }
         });
     }
-    return(<div>
-        {weightsPersonArray.length>0&& updatedDaysArray.length>0?
+
+    return (<div>
+        {weightsPersonArray.length > 0 && updatedDaysArray.length > 0 ?
             <Grid centered>
                 <Grid.Row>
                     <Grid.Column>
                         <h1>Weight Tracking...</h1>
-                        <div id={'chart-container'} style={{ AlignContent:'center', height:'50%',width:'80%'}}>
+                        <div id={'chart-container'} style={{AlignContent: 'center', height: '50%', width: '80%'}}>
                             <canvas id="myChart"></canvas>
                         </div>
                     </Grid.Column>
-                </Grid.Row >
-                <Grid.Row >
-                    <Grid.Column >
-                        <Button content='Add Weight' onClick={addWeightToUser} />
-                        <Input onChange={changeHandler} name={'weight'} type={'number'} placeholder='Weight...' />
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        <Button content='Add Weight' onClick={addWeightToUser}/>
+                        <Input onChange={changeHandler} name={'weight'} type={'number'} placeholder='Weight...'/>
                         <div>
                             {note}</div>
-                        <Button content='Show Chart' onClick={()=>{
+                        <Button content='Show Chart' onClick={() => {
                             getChart(weightsPersonArray, updatedDaysArray)
-                        }} />
+                        }}/>
                     </Grid.Column>
-                </Grid.Row >
+                </Grid.Row>
                 <Grid.Row>
-                    <Grid.Column >
-                        {userWeightHistory?
+                    <Grid.Column>
+                        {userWeightHistory ?
                             <Message>
                                 <Message.Header>My Weight Progress</Message.Header>
                                 <Message.List>
                                     {userWeightHistory.map(ele => {
-                                        return <MessageItem key={ele._id}>Weight: {ele.weight} At {ele.date} <Button id={ele._id} content='Delete Weight' onClick={(e)=> {
+                                        return <MessageItem key={ele._id}>Weight: {ele.weight} At {ele.date} <Button
+                                            id={ele._id} content='Delete Weight' onClick={(e) => {
 
                                             DeleteWeightFromUser(e)
-                                        }} />
+                                        }}/>
                                         </MessageItem>
                                     })}
                                 </Message.List>
-                            </Message>   :<></>}
+                            </Message> : <></>}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
-            :<Grid centered verticalAlign={'middle'}>
-                <div style={{margin:'auto'}}><Button content='Show Progress' onClick={update} /></div></Grid>
+            : <Grid centered verticalAlign={'middle'}>
+                <div style={{margin: 'auto'}}><Button content='Show Progress' onClick={update}/></div>
+            </Grid>
         }
         <div style={{height: '55px'}}>
             <Nav/></div>

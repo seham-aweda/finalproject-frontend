@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Button, Card, Form, FormField, FormInput, Grid, Image, Input, Label, Segment} from 'semantic-ui-react'
+import React from 'react'
+import {Button, Card, Form, FormField, Image, Input} from 'semantic-ui-react'
 import './update.css'
 import axios from "axios";
 import {ToastContainer, toast} from 'react-toastify';

@@ -42,9 +42,9 @@ const SignUp = () => {
                         age: ""
                     })
 
-                setTimeout(() => {
-                    navigate('/bmi');
-                }, 1000)
+                    setTimeout(() => {
+                        navigate('/bmi');
+                    }, 1000)
                 }
             }).catch(e => {
                 console.log(e)

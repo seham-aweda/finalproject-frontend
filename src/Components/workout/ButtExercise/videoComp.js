@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import Countdown, {formatTimeDelta, zeroPad} from 'react-countdown';
+import Countdown, {zeroPad} from 'react-countdown';
 
 import {Button, Grid, Icon} from "semantic-ui-react";
 import {useNavigate} from "react-router-dom";
@@ -22,10 +22,10 @@ const Video = ({video, time, func, exe, text, length}) => {
     };
 
     return (
-        <Grid style={{height:'100vh'}} stackable verticalAlign={'middle'}  >
+        <Grid style={{height: '100vh'}} stackable verticalAlign={'middle'}>
             <Grid.Row>
                 <Grid.Column width={8}>
-                    <Button style={{marginTop:'0',marginBottom: '2rem'}} basic color='purple'
+                    <Button style={{marginTop: '0', marginBottom: '2rem'}} basic color='purple'
                             onClick={() => {
                                 navigate('/workouts')
                             }}
@@ -33,11 +33,11 @@ const Video = ({video, time, func, exe, text, length}) => {
                         Back
                     </Button>
                     {video.slice(video.lastIndexOf('.') + 1) === 'mp4' ?
-                        <video style={{width:'100%'}} autoPlay playsInline muted loop>
+                        <video style={{width: '100%'}} autoPlay playsInline muted loop>
                             <source src={video}/>
-                        </video> : <img style={{width:'100%'}} src={video} alt={"Rest"}/>}
+                        </video> : <img style={{width: '100%'}} src={video} alt={"Rest"}/>}
                 </Grid.Column>
-                <Grid.Column  width={8} textAlign={'center'}>
+                <Grid.Column width={8} textAlign={'center'}>
                     <div className={'under-video'}>
                         {video.slice(video.lastIndexOf('.') + 1) === 'mp4' ?
                             <>
@@ -46,12 +46,12 @@ const Video = ({video, time, func, exe, text, length}) => {
                                 </div>
                                 <div className={'description'}>{text}</div>
                             </> : <div style={{padding: '2vw', textAlign: 'center'}}>
-                                <h1 style={{fontSize:'200%',fontStyle: 'italic'}}> Rest</h1>
+                                <h1 style={{fontSize: '200%', fontStyle: 'italic'}}> Rest</h1>
                             </div>}
-                        <div className={'next'} >
+                        <div className={'next'}>
                             {!time.toString().includes('times') ?
                                 <>
-                                    <div style={{fontSize: '3rem',marginTop: '4vw'}}>
+                                    <div style={{fontSize: '3rem', marginTop: '4vw'}}>
                                         <Countdown date={Date.now() + Number(time) * 1000}
                                                    renderer={renderer}
                                                    ref={clockRef}
@@ -59,7 +59,7 @@ const Video = ({video, time, func, exe, text, length}) => {
                                                        func(true)
                                                    }}/><br/><br/>
                                         <br/></div>
-                                    <div style={{marginTop: '4vw',display: 'flex', justifyContent: 'space-around'}}>
+                                    <div style={{marginTop: '4vw', display: 'flex', justifyContent: 'space-around'}}>
                                         <Button basic color='purple'
                                                 type='submit'
                                                 onClick={handleStart}
@@ -74,7 +74,8 @@ const Video = ({video, time, func, exe, text, length}) => {
                                         </Button></div>
                                 </>
                                 :
-                                <button style={{marginTop: '4vw'}} className="ui huge basic purple right labeled icon button" onClick={() => {
+                                <button style={{marginTop: '4vw'}}
+                                        className="ui huge basic purple right labeled icon button" onClick={() => {
                                     func(true)
                                 }}>
                                     <i className="right arrow icon"></i>
@@ -82,7 +83,8 @@ const Video = ({video, time, func, exe, text, length}) => {
                                 </button>}
                         </div>
                         <div className={'skip'}>
-                            <button style={{marginTop: '4vw'}} className="ui huge basic purple right labeled icon button" onClick={() => {
+                            <button style={{marginTop: '4vw'}}
+                                    className="ui huge basic purple right labeled icon button" onClick={() => {
                                 func(true)
                             }}>
                                 <i className="right arrow icon"></i>

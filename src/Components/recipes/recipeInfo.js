@@ -40,7 +40,7 @@ const RecipeInfo = () => {
                 Back
             </Button>
             <h1>Healthy Meal In 30 Min</h1>
-           </div>
+        </div>
         {recipe.length > 0 ? <>
             <Grid divided stackable verticalAlign={'middle'}>
                 <Grid.Column width={4}>

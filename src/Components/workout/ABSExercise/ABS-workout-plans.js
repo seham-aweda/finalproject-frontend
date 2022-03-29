@@ -23,22 +23,22 @@ import vHoldVideo from '../videos/abs adv/v-hold.mp4'
 import xManCrunchVideo from '../videos/abs adv/x-man-crunch.mp4'
 
 //exercises
-const flutterKicks="Lie on your back with your arms at your sides. \n Lift your legs and keep them as straight as you can. \n Then quickly raise your right leg up, and simultaneously lower your left leg. Switch legs and repeat."
-const legsRaises="Lie down on your back, and put your hands beneath your hips for support. \n Then lift your legs up until they form a right angle with the floor. \n Slowly bring your legs back down and repeat the exercise."
-const russianTwist="Sit on the floor with your knees bent, feet lifted a little bit and back tilted backwards. \n Then hold your hands together and twist from side to side."
-const skippingWithoutRope="Place your arms at your sides and pretend to hold a skipping rope handle in each hand. \n Jump and alternately land on the balls of your feet, rotating your wrists at the same time as if you wee spinning a rope."
-const standingBicycleCrunches="Stand with your feet shoulder width apart. \n Bring your knee to your opposite elbow. \n Return to the start position and repeat with the other side."
-const heelTouch='Lie on the ground with your legs bent and your arms by your sides. \n Slightly lift your upper body off the floor and make your hands alternately reach your heels.'
-const heelToTheHeavens='Lie on your back with your hands at your sides and legs straight up towards the ceiling. \n Raise your hips straight up off the floor, then go back to the starting position, Repeat the exercise.'
-const plank='Lie on the floor with your toes and forearms on the ground. Keep your body straight and hold this position as long as you can. \n this exercise strengthens the abdomen, back and shoulders.'
-const reclinedObliqueTwist='Lie on your back with your legs extended and your elbows directly under your shoulders. \n Lift your left leg up at a 45 degree angle while reaching your right arm over to your left side. \n Then slowly go back to the starting position. \n Repeat several times, and then switch to the other side.'
-const reverseCrunches='Lie on your back with your knees up at a 90 degree angle and your hands behind your head. \n Lift your upper body and thighs, and then stretch out. Repeat this exercise.'
-const crossArmCrunches="Lie down and bend your knees with your feet flat on the floor. Cross your arms in front of your chest. \n Then lift your head and shoulders up to make a 30 degree angle with the ground. IT primarily works on the rectus abdominis muscle and obliques."
-const crossKneePlank="Start with the plank position. Bring one knee and the opposite elbow in to touch each other, then bring them back. Repeat with the other side."
-const sideCrunchesLeft="Lie on your right side with your right foot behind your left foot. \n Put your left hand behind your head and your right hand on the left side of your oblique muscles. \n Lift your right shoulder up off the floor. Repeat the exercise."
-const sideCrunchesRight="Lie on your left side with your left foot behind your right foot. \n Put your right hand behind your head and your left hand on the right side of your oblique muscles. \n Lift your left shoulder up off the floor. Repeat the exercise."
-const vHold="Sit on the floor, lift your legs up at a 45 degree angle, and lean your upper body back at a 45 degree angle. Stretch your arms forward, Hold this position."
-const xManCrunch="Lie on your back with your hands stretched at your sides and legs apart.\n Lift your legs and arms off the floor .Then raise your upper body and squeeze your arms amd knees towards your abdominals. Lower your arms and legs(but don\'t touch the floor) and repeat the exercise."
+const flutterKicks = "Lie on your back with your arms at your sides. \n Lift your legs and keep them as straight as you can. \n Then quickly raise your right leg up, and simultaneously lower your left leg. Switch legs and repeat."
+const legsRaises = "Lie down on your back, and put your hands beneath your hips for support. \n Then lift your legs up until they form a right angle with the floor. \n Slowly bring your legs back down and repeat the exercise."
+const russianTwist = "Sit on the floor with your knees bent, feet lifted a little bit and back tilted backwards. \n Then hold your hands together and twist from side to side."
+const skippingWithoutRope = "Place your arms at your sides and pretend to hold a skipping rope handle in each hand. \n Jump and alternately land on the balls of your feet, rotating your wrists at the same time as if you wee spinning a rope."
+const standingBicycleCrunches = "Stand with your feet shoulder width apart. \n Bring your knee to your opposite elbow. \n Return to the start position and repeat with the other side."
+const heelTouch = 'Lie on the ground with your legs bent and your arms by your sides. \n Slightly lift your upper body off the floor and make your hands alternately reach your heels.'
+const heelToTheHeavens = 'Lie on your back with your hands at your sides and legs straight up towards the ceiling. \n Raise your hips straight up off the floor, then go back to the starting position, Repeat the exercise.'
+const plank = 'Lie on the floor with your toes and forearms on the ground. Keep your body straight and hold this position as long as you can. \n this exercise strengthens the abdomen, back and shoulders.'
+const reclinedObliqueTwist = 'Lie on your back with your legs extended and your elbows directly under your shoulders. \n Lift your left leg up at a 45 degree angle while reaching your right arm over to your left side. \n Then slowly go back to the starting position. \n Repeat several times, and then switch to the other side.'
+const reverseCrunches = 'Lie on your back with your knees up at a 90 degree angle and your hands behind your head. \n Lift your upper body and thighs, and then stretch out. Repeat this exercise.'
+const crossArmCrunches = "Lie down and bend your knees with your feet flat on the floor. Cross your arms in front of your chest. \n Then lift your head and shoulders up to make a 30 degree angle with the ground. IT primarily works on the rectus abdominis muscle and obliques."
+const crossKneePlank = "Start with the plank position. Bring one knee and the opposite elbow in to touch each other, then bring them back. Repeat with the other side."
+const sideCrunchesLeft = "Lie on your right side with your right foot behind your left foot. \n Put your left hand behind your head and your right hand on the left side of your oblique muscles. \n Lift your right shoulder up off the floor. Repeat the exercise."
+const sideCrunchesRight = "Lie on your left side with your left foot behind your right foot. \n Put your right hand behind your head and your left hand on the right side of your oblique muscles. \n Lift your left shoulder up off the floor. Repeat the exercise."
+const vHold = "Sit on the floor, lift your legs up at a 45 degree angle, and lean your upper body back at a 45 degree angle. Stretch your arms forward, Hold this position."
+const xManCrunch = "Lie on your back with your hands stretched at your sides and legs apart.\n Lift your legs and arms off the floor .Then raise your upper body and squeeze your arms amd knees towards your abdominals. Lower your arms and legs(but don\'t touch the floor) and repeat the exercise."
 
 const highStepping = 'Run in place while pulling your knees as high as possible with each step.\n Keep your upper body upright during this exercise,'
 const buttKicks = 'Stand up on the floor, then run in place while kicking your heel up to touch your butt with each step. \n try to di it as fast as you can. it\'s a great exercise for the gluteus and hamstrings.'
@@ -60,7 +60,7 @@ export const ABSBeginnerPlan = [
     {anim: rest, time: 15},
     {anim: standingBicycleCrunchesVideo, time: '14times', exercise: 7, text: standingBicycleCrunches},
     {anim: rest, time: 15},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text:kneelingLungeStretchLeft },
+    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text: kneelingLungeStretchLeft},
     {anim: rest, time: 8},
     {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 9, text: kneelingLungeStretchRight},
 ]
@@ -80,7 +80,7 @@ export const ABSIntermediatePlan = [
     {anim: rest, time: 15},
     {anim: reverseCrunchesVideo, time: '18times', exercise: 7, text: reverseCrunches},
     {anim: rest, time: 15},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text:kneelingLungeStretchLeft },
+    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text: kneelingLungeStretchLeft},
     {anim: rest, time: 8},
     {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 9, text: kneelingLungeStretchRight},
 ]
@@ -100,7 +100,7 @@ export const ABSAdvancedPlan = [
     {anim: rest, time: 8},
     {anim: xManCrunchVideo, time: '18times', exercise: 7, text: xManCrunch},
     {anim: rest, time: 8},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text:kneelingLungeStretchLeft },
+    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text: kneelingLungeStretchLeft},
     {anim: rest, time: 8},
     {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 9, text: kneelingLungeStretchRight},
 ]

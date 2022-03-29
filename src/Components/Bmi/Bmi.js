@@ -69,7 +69,7 @@ const Bmi = () => {
                 if (res.status === 200) {
                     setTimeout(() => {
                         navigate('/workouts')
-                    }, 4000)
+                    }, 2500)
                 } else {
                     setNote(res.data.error)
                 }

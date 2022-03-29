@@ -33,14 +33,14 @@ const donkeyKicksLeft = 'Start on all fours with your knees under your butt and 
 const donkeyKicksRight = 'Start on all fours with your knees under your butt and your hands under your shoulders. \n Then lift your right leg and squeeze your butt as much as you can. Go back to the start position and repeat the exercise'
 const kneelingLungeStretchLeft = 'Start in a push-up position. Bring your left knee forward and drop your right knee on the floor. \n Raise your upper body and put your hands on your waist. Then push your hips forward while keeping your upper body straight.\n Please make sure your front knee won\'t go over your toes.Hold this position for a few seconds'
 const kneelingLungeStretchRight = 'Start in a push-up position. Bring your right knee forward and drop your left knee on the floor. \n Raise your upper body and put your hands on your waist. Then push your hips forward while keeping your upper body straight.\n Please make sure your front knee won\'t go over your toes.Hold this position for a few seconds'
-const benchGluteKickbackLeft='Start with your right knee and your hands on a bench, put your hands directly under your shoulders. \n Then kick your left leg back until iy is parallel with the ground. Return to the starting position and repeat the exercise.'
-const benchGluteKickbackRight='Start with your left knee and your hands on a bench, put your hands directly under your shoulders. \n Then kick your right leg back until iy is parallel with the ground. Return to the starting position and repeat the exercise.'
-const hipBridgeLegLiftLeft='Lie on your back with your knees bent and feet flat on the floor. Then lift one leg up while raising your hips off the floor as high as you can. \n Go back to the start position and repeat the exercise.'
-const hipBridgeLegLiftRight='Lie on your back with your knees bent and feet flat on the floor. Then lift one leg up while raising your hips off the floor as high as you can. \n Go back to the start position and repeat the exercise.'
-const crustyLunges='Stand straight up. Then step back with your left leg to the right, and bend your knees at the same time. \n Go back to the start position and switch to the other side.'
-const leftLungeKneeHops='Stand straight up. Then step your left leg back and lower your body. \n When you come up, raise your left knee as high as you can.'
-const rightLungeKneeHops='Stand straight up. Then step your right leg back and lower your body. \n When you come up, raise your right knee as high as you can.'
-const sumoSquat='Stand with your feet 6-12 inches apart. Stretch your arms in front of you. \n Lower your body until your thighs are parallel to the floor. Return to the starting position and repeat the exercise.'
+const benchGluteKickbackLeft = 'Start with your right knee and your hands on a bench, put your hands directly under your shoulders. \n Then kick your left leg back until iy is parallel with the ground. Return to the starting position and repeat the exercise.'
+const benchGluteKickbackRight = 'Start with your left knee and your hands on a bench, put your hands directly under your shoulders. \n Then kick your right leg back until iy is parallel with the ground. Return to the starting position and repeat the exercise.'
+const hipBridgeLegLiftLeft = 'Lie on your back with your knees bent and feet flat on the floor. Then lift one leg up while raising your hips off the floor as high as you can. \n Go back to the start position and repeat the exercise.'
+const hipBridgeLegLiftRight = 'Lie on your back with your knees bent and feet flat on the floor. Then lift one leg up while raising your hips off the floor as high as you can. \n Go back to the start position and repeat the exercise.'
+const crustyLunges = 'Stand straight up. Then step back with your left leg to the right, and bend your knees at the same time. \n Go back to the start position and switch to the other side.'
+const leftLungeKneeHops = 'Stand straight up. Then step your left leg back and lower your body. \n When you come up, raise your left knee as high as you can.'
+const rightLungeKneeHops = 'Stand straight up. Then step your right leg back and lower your body. \n When you come up, raise your right knee as high as you can.'
+const sumoSquat = 'Stand with your feet 6-12 inches apart. Stretch your arms in front of you. \n Lower your body until your thighs are parallel to the floor. Return to the starting position and repeat the exercise.'
 export const buttBeginnerPlan = [
     {anim: highSteppingVideo, time: 30, exercise: 1, text: highStepping},
     {anim: rest, time: 8},
@@ -56,7 +56,7 @@ export const buttBeginnerPlan = [
     {anim: rest, time: 15},
     {anim: mountainClimberVideo, time: '14times', exercise: 7, text: mountainClimber},
     {anim: rest, time: 15},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text:kneelingLungeStretchLeft },
+    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text: kneelingLungeStretchLeft},
     {anim: rest, time: 8},
     {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 9, text: kneelingLungeStretchRight},
 ]
@@ -76,7 +76,7 @@ export const buttIntermediatePlan = [
     {anim: rest, time: 15},
     {anim: hipBridgeLegLiftRightVideo, time: '12times', exercise: 7, text: hipBridgeLegLiftRight},
     {anim: rest, time: 15},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text:kneelingLungeStretchLeft },
+    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text: kneelingLungeStretchLeft},
     {anim: rest, time: 8},
     {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 9, text: kneelingLungeStretchRight},
 ]
@@ -96,7 +96,7 @@ export const buttAdvancedPlan = [
     {anim: rest, time: 15},
     {anim: sumoSquatVideo, time: '15times', exercise: 7, text: sumoSquat},
     {anim: rest, time: 15},
-    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text:kneelingLungeStretchLeft },
+    {anim: kneelingLungeStretchLeftVideo, time: 30, exercise: 8, text: kneelingLungeStretchLeft},
     {anim: rest, time: 8},
     {anim: kneelingLungeStretchRightVideo, time: 30, exercise: 9, text: kneelingLungeStretchRight},
 ]

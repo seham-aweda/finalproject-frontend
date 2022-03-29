@@ -3,7 +3,7 @@ import Nav from "../nav/nav";
 import Update from "./update";
 import {Button, Form, FormField} from "semantic-ui-react";
 import axios from "axios";
-import {toast, ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from "react-router-dom";
 

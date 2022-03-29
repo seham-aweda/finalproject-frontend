@@ -1,6 +1,6 @@
 import React from "react";
-import {Link, useNavigate} from "react-router-dom";
-import {Icon, Menu, MenuItem, Segment} from "semantic-ui-react";
+import {useNavigate} from "react-router-dom";
+import {Icon, Menu, MenuItem} from "semantic-ui-react";
 import {toast, ToastContainer} from "react-toastify";
 
 const Nav = () => {
