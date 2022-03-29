@@ -75,7 +75,7 @@ const Bmi = () => {
                 }
             }).catch(e => console.log(e))
         } else {
-            setNote('inter your height and weight')
+            setNote('enter your height and weight')
         }
     }
     return (

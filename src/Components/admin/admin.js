@@ -55,7 +55,7 @@ const Admin = () => {
                 <input type="text" name="email" value={admin.email} placeholder="E-mail" onChange={changeHandler}/>
                 <input type="password" name="password" value={admin.password} placeholder="Password"
                        onChange={changeHandler}/>
-                {note}
+                {note} <br/>
                 <input type="submit" name="signup_submit" value="log me in" onClick={LogInAdmin}/>
 
             </div>

@@ -29,7 +29,7 @@ const SignUp = () => {
                     if (res.data.includes('duplicate')) {
                         setErr('Email Already Exist')
                     } else {
-                        setErr(res.data)
+                        setErr("Please fill up to register")
                     }
                 } else {
                     sessionStorage.setItem("userToken", res.data.token);
@@ -42,10 +42,10 @@ const SignUp = () => {
                         age: ""
                     })
 
-                }
                 setTimeout(() => {
                     navigate('/bmi');
                 }, 1000)
+                }
             }).catch(e => {
                 console.log(e)
             })

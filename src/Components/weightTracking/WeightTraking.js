@@ -118,7 +118,7 @@ const WeightTracking=()=>{
             data: {
                 labels:days,
                 datasets: [{
-                    label: '# of Votes',
+                    label: '# of Weights',
                     data: weight,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
